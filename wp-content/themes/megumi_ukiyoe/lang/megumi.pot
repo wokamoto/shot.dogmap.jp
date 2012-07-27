@@ -1,0 +1,1157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-29 22:40+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /magumi_themes/trunk/megumi_fujin/home.php:10
+#: /magumi_themes/trunk/megumi_fujin/index.php:6
+#: /magumi_themes/trunk/megumi_fujin/archive.php:22
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:45
+#: /magumi_themes/trunk/megumi_fujin/script/contents.php:17
+#: /magumi_themes/trunk/megumi_fujin/script/get_img.php:29
+#: /magumi_themes/trunk/megumi_fujin/script/get_img.php:44
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:39
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:58
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:126
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:139
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:182
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:195
+#: /magumi_themes/trunk/megumi_fujin/search.php:7
+#, php-format
+msgid "Permanent Link to %s"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/home.php:11
+#: /magumi_themes/trunk/megumi_fujin/index.php:7
+#: /magumi_themes/trunk/megumi_fujin/image.php:6
+#: /magumi_themes/trunk/megumi_fujin/archive.php:23
+#: /magumi_themes/trunk/megumi_fujin/single.php:7
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:27
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:33
+#: /magumi_themes/trunk/megumi_fujin/search.php:8
+#: /magumi_themes/trunk/megumi_fujin/footer.php:30
+#: /magumi_themes/trunk/megumi_fujin/footer.php:40
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/home.php:18
+#: /magumi_themes/trunk/megumi_fujin/index.php:14
+#: /magumi_themes/trunk/megumi_fujin/archive.php:30
+#: /magumi_themes/trunk/megumi_fujin/search.php:15
+msgid "Comments:"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/home.php:18
+#: /magumi_themes/trunk/megumi_fujin/index.php:14
+#: /magumi_themes/trunk/megumi_fujin/archive.php:30
+#: /magumi_themes/trunk/megumi_fujin/search.php:15
+msgid "No Comments &#187;"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/home.php:18
+#: /magumi_themes/trunk/megumi_fujin/index.php:14
+#: /magumi_themes/trunk/megumi_fujin/archive.php:30
+#: /magumi_themes/trunk/megumi_fujin/search.php:15
+msgid "1 Comment &#187;"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/home.php:18
+#: /magumi_themes/trunk/megumi_fujin/index.php:14
+#: /magumi_themes/trunk/megumi_fujin/archive.php:30
+#: /magumi_themes/trunk/megumi_fujin/search.php:15
+msgid "% Comments &#187;"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/home.php:18
+#: /magumi_themes/trunk/megumi_fujin/index.php:14
+#: /magumi_themes/trunk/megumi_fujin/archive.php:30
+#: /magumi_themes/trunk/megumi_fujin/search.php:15
+msgid "Comments Closed"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/home.php:19
+#: /magumi_themes/trunk/megumi_fujin/index.php:15
+#: /magumi_themes/trunk/megumi_fujin/image.php:26
+#: /magumi_themes/trunk/megumi_fujin/archive.php:31
+#: /magumi_themes/trunk/megumi_fujin/single.php:13
+#: /magumi_themes/trunk/megumi_fujin/search.php:16
+msgid "Tags:"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/home.php:19
+#: /magumi_themes/trunk/megumi_fujin/index.php:15
+#: /magumi_themes/trunk/megumi_fujin/image.php:26
+#: /magumi_themes/trunk/megumi_fujin/archive.php:31
+#: /magumi_themes/trunk/megumi_fujin/single.php:13
+#: /magumi_themes/trunk/megumi_fujin/search.php:16
+msgid " "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/home.php:20
+#: /magumi_themes/trunk/megumi_fujin/index.php:16
+#: /magumi_themes/trunk/megumi_fujin/image.php:27
+#: /magumi_themes/trunk/megumi_fujin/archive.php:32
+#: /magumi_themes/trunk/megumi_fujin/single.php:14
+#: /magumi_themes/trunk/megumi_fujin/search.php:17
+msgid "Edit"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/home.php:26
+#: /magumi_themes/trunk/megumi_fujin/sitemap.php:18
+#: /magumi_themes/trunk/megumi_fujin/index.php:22
+#: /magumi_themes/trunk/megumi_fujin/single.php:25
+#: /magumi_themes/trunk/megumi_fujin/page.php:12
+#: /magumi_themes/trunk/megumi_fujin/404.php:3
+msgid "Not Found"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/home.php:27
+#: /magumi_themes/trunk/megumi_fujin/sitemap.php:19
+#: /magumi_themes/trunk/megumi_fujin/index.php:23
+#: /magumi_themes/trunk/megumi_fujin/single.php:26
+#: /magumi_themes/trunk/megumi_fujin/page.php:13
+msgid "Sorry, but you are looking for something that isn&#8217;t here."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/header.php:10
+msgid "&raquo; Blog Archive"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/header.php:15
+#: /magumi_themes/trunk/megumi_fujin/header.php:36
+#, php-format
+msgid "%s RSS Feed"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/header.php:16
+#, php-format
+msgid "%s Atom Feed"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/header.php:30
+#: /magumi_themes/trunk/megumi_fujin/footer.php:9
+msgid "HOME"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/sitemap.php:22
+#: /magumi_themes/trunk/megumi_fujin/page.php:16
+msgid "Edit this entry."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/image.php:14
+msgid "Read the rest of this entry &raquo;"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/image.php:37
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/archive.php:6
+#, php-format
+msgid "Archive for the &#8216;%s&#8217; Category"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/archive.php:8
+#, php-format
+msgid "Posts Tagged &#8216;%s&#8217;"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/archive.php:10
+#: /magumi_themes/trunk/megumi_fujin/comments.php:35
+msgid "F jS, Y"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/archive.php:12
+msgid "F, Y"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/archive.php:14
+msgid "Y"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/archive.php:16
+msgid "Author Archive"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/archive.php:18
+msgid "Blog Archives"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/archive.php:37
+#: /magumi_themes/trunk/megumi_fujin/search.php:22
+#: /magumi_themes/trunk/megumi_fujin/functions.php:117
+msgid "&laquo; Older Entries"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/archive.php:38
+#: /magumi_themes/trunk/megumi_fujin/search.php:23
+#: /magumi_themes/trunk/megumi_fujin/functions.php:121
+#: /magumi_themes/trunk/megumi_fujin/functions.php:123
+msgid "Newer Entries &raquo;"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/archive.php:43
+#, php-format
+msgid "Sorry, but there aren't any posts in the %s category yet."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/archive.php:45
+msgid "Sorry, but there aren't any posts with this date."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/archive.php:48
+#, php-format
+msgid "Sorry, but there aren't any posts by %s yet."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/archive.php:50
+msgid "No posts found."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/searchform.php:1
+msgid "Search Site"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:8
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:19
+msgid "No Comment"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:19
+msgid "Comment"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:19
+msgid "Comments %"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:31
+#, php-format
+msgid "<cite>%s</cite> Says:"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:33
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:35
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:36
+msgid "edit"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:48
+msgid "Comments are closed."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:54
+msgid "Post comment"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:61
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:65
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:65
+msgid "Log out of this account"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:65
+msgid "Log out &raquo;"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:67
+msgid "Your name:"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:67
+#: /magumi_themes/trunk/megumi_fujin/comments.php:69
+msgid "<em>(required)</em>"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:68
+msgid "E-mail:"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:70
+msgid "Website"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/comments.php:73
+msgid "Submit Comment"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:13
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:20
+#: /magumi_themes/trunk/megumi_fujin/script/othe_setting.php:24
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:16
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:16
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:29
+#: /magumi_themes/trunk/megumi_fujin/script/seo.php:18
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:100
+msgid "Readme"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:15
+#: /magumi_themes/trunk/megumi_fujin/script/othe_setting.php:19
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:11
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:11
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:22
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:24
+#: /magumi_themes/trunk/megumi_fujin/script/seo.php:13
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:95
+msgid "Megumi Theme Settings"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:16
+#: /magumi_themes/trunk/megumi_fujin/script/othe_setting.php:20
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:9
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:12
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:12
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:25
+#: /magumi_themes/trunk/megumi_fujin/script/seo.php:14
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:93
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:96
+msgid "Theme Image Settings"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:17
+#: /magumi_themes/trunk/megumi_fujin/script/othe_setting.php:21
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:13
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:13
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:26
+#: /magumi_themes/trunk/megumi_fujin/script/seo.php:15
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:97
+msgid "Main Image Settings"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:18
+#: /magumi_themes/trunk/megumi_fujin/script/othe_setting.php:22
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:14
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:27
+#: /magumi_themes/trunk/megumi_fujin/script/seo.php:11
+#: /magumi_themes/trunk/megumi_fujin/script/seo.php:16
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:98
+msgid "SEO Tools"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:19
+#: /magumi_themes/trunk/megumi_fujin/script/othe_setting.php:17
+#: /magumi_themes/trunk/megumi_fujin/script/othe_setting.php:23
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:15
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:15
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:28
+#: /magumi_themes/trunk/megumi_fujin/script/seo.php:17
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:99
+msgid "Other Settings"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:26
+msgid "The Megumi themes"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:28
+msgid ""
+"Thank you for using our themes.<br />Please check the following before using "
+"them. "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:31
+msgid "Terms and Conditions "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:32
+msgid "Please check the following page."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:36
+msgid "Installation"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:37
+msgid ""
+"Upload megumi_kaze folder to /wp-content/themes/ directory in your WordPress "
+"installation, then go to the Appearance panel of your WordPress and select "
+"the theme."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:40
+msgid "DESCRIPTION"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:41
+msgid "1:Widgets"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:42
+msgid "1-1.Widgets position"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:43
+msgid "Here are display positions of the included widgets "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:45
+msgid "Sidebar (displayed with all pages) "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:46
+msgid "Sidebar (displayed with the top page only) "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:47
+msgid "Sidebar (displayed with all pages except the top) "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:48
+msgid "Footer No.1: in footer, second from the right"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:49
+msgid "Footer No.2: in footer, far right "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:51
+msgid "1-2. Original widgets "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:53
+msgid "Side banners "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:54
+msgid ""
+"It displays 2 banners. You can change the banners' links on the the Megumi "
+"themes settings. "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:55
+msgid "Megumi pages list "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:56
+msgid "It displays a list of parent pages. "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:57
+msgid "Recent posts list"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:58
+msgid ""
+"It displays a list of recent posts. You can choose a category and the number "
+"of posts to show. Also you can put more than one. "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:60
+msgid "2. Basic SEO tools "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:62
+msgid "Google Analytics "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:63
+msgid "Google webmaster tools "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:64
+msgid "Yahoo! Site Explorer"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:65
+msgid "Bing Webmaster Center"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:67
+msgid "You can add those services easily."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:68
+msgid "3. Theme settings"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:69
+msgid "On the admin panel, you can easily change theme's settings. "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:70
+msgid "3-1 Upper part, a list of the latest posts "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:71
+msgid ""
+"You can set options below for a list of the recent posts to show on the "
+"upper left. "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:74
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:82
+msgid "Categories to show. "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:75
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:83
+msgid "Display type (text only or image and text). "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:76
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:84
+msgid "The number of posts to show."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:78
+msgid "3-2 Lower part, a list of the latest posts "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:79
+msgid ""
+"You can set options below for a list of the recent posts to show on the "
+"lower left. "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:86
+msgid "3-3 Main navigation"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:87
+msgid ""
+"By default, all parents pages are listed in the main navigation, however you "
+"can choose pages to exclude here. For multiple selections please click while "
+"holding down Ctrl. Also, you can choose how to show children pages from "
+"\"None\", \"Children pages\" and \"Grandchildren pages\"."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:88
+msgid "3-4 Category navigation "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:89
+msgid ""
+"By default, all parents categories listed in the category navigation, "
+"however you can choose categories to exclude here. For multiple selections "
+"please click while holding down Ctrl. Also, you can choose how to show "
+"children categories from \"None\", \"Children categories\" and "
+"\"Grandchildren categories\"."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:90
+msgid ""
+"3-5 The number of characters to display for excerpts of Archive pages and so "
+"on."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:91
+msgid ""
+"You can change the number of characters to display for excerpts of archive "
+"pages for categories, tags, monthly and so on."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:92
+msgid "3-6 Image size settings in the list of categories and archive pages"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:93
+msgid ""
+"You can change the size of images to display on archive pages for "
+"categories, tags, monthly and so on. When length or width exceeds the values "
+"here, the image size will be reduced automatically."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:94
+msgid "3-7.Link settings of side banner in the right column "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:95
+msgid ""
+"You can choose a link from existing WordPress pages or put an external URL "
+"for the banner.<br />* Also, you can upload images for the banner."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:96
+msgid "3-8 Set banner link is displayed in the header "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:97
+msgid ""
+"You can choose a link from existing WordPress pages or put any URL for the "
+"banner. Also, you can upload images for the banner.<br />* Your server may "
+"have a limit of size to upload images. "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:98
+msgid "4. Setting theme Images "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:99
+msgid ""
+"You can upload images those you will use frequently.<br />* Your server may "
+"have a limit of size to upload images."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:100
+msgid "5. Main image settings "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:101
+msgid ""
+"You can upload main images that is automatically changed at random. Also, "
+"you can delete them on this screen. If you would like to show only one "
+"image, not several images at random, delete the other images but the one."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:102
+msgid "6. Other settings for the main image"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:103
+msgid "The settings here also apply to other Megumi themes. "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:104
+msgid "6-1 Date Format"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:105
+msgid "You can change the date format."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:106
+msgid "6-2 Copyright"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:107
+msgid "You can change the copyright at the bottom. "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:110
+msgid "Customize services "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:111
+#, php-format
+msgid ""
+"We provide customize services that modify logos, main images and color "
+"schemes while the layout keeps as same as the Megumi themes for $840,00.<br /"
+">For more information, <a href=\"%s\">please contact us</a>."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:112
+msgid ""
+"* This service customizes logos, main images, without changing the layout of "
+"the theme."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:115
+msgid "For our themes users "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:116
+msgid " You don't have domains or servers yet? "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:117
+msgid ""
+"How about our \"Megumi server\" in which WordPress already installed? This "
+"is specially designed for WordPress, so has great performance!"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:118
+#, php-format
+msgid ""
+"For more information about \"Megumi server\",<a href=\"%s\">please contact "
+"us</a>."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:119
+msgid "Come with:"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:121
+msgid "Get one free domain."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:122
+msgid "WordPress Installed."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:123
+msgid "The Megumi buiness themes for free."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:127
+msgid "Feedback"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/readme.php:128
+#, php-format
+msgid ""
+"If you have ANY feedback about our themes, <a href=\"%s\" target=\"_blank"
+"\">plese let us know</a>."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:16
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:38
+#: /magumi_themes/trunk/megumi_fujin/script/contents.php:10
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:108
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:164
+msgid "New Post"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:49
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:51
+#: /magumi_themes/trunk/megumi_fujin/script/contents.php:21
+#: /magumi_themes/trunk/megumi_fujin/script/contents.php:23
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:130
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:132
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:186
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:188
+msgid "&raquo;Read More"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:100
+msgid "Category:"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:101
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:51
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:78
+msgid "Select all"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:105
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:61
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:88
+msgid "Number of posts to show:"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:121
+msgid "Recent posts with date."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:122
+msgid "Post List"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:167
+msgid "Go to the Megumi setteings page to change the options"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:168
+msgid "Contents Nav"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:178
+msgid "Only show the parent page"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/widgets.php:179
+msgid "Megumi Pages List"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/othe_setting.php:28
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:20
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:33
+#: /magumi_themes/trunk/megumi_fujin/script/seo.php:22
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:104
+msgid "Settings saved."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/othe_setting.php:35
+msgid "Date Format"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/othe_setting.php:39
+msgid "Copyright"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/othe_setting.php:45
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:73
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:249
+#: /magumi_themes/trunk/megumi_fujin/script/seo.php:47
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:172
+msgid "Save Changes &raquo;"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:31
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:112
+msgid "Theme Images upload"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:34
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:116
+msgid "Image Name."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:35
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:117
+msgid "Image Upload."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:38
+msgid "Main Image"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/main_img.php:61
+msgid "Delete Image."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:14
+msgid "SEO Settings"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:40
+msgid "Set latest posts"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:41
+msgid "Set navigation"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:42
+msgid "Set archive"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:43
+msgid "Set Banners"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:47
+msgid "Upper part, a list of the latest posts"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:50
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:76
+msgid "Select a category:"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:54
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:81
+msgid "Display Type:"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:56
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:83
+msgid ":Text"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:57
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:84
+msgid ":Image and text"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:73
+msgid "Lower part, a list of the latest posts"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:103
+msgid "Page Navigations"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:106
+msgid "Select (a) page(s) to exclude."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:110
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:132
+msgid "Control + click to select multiple."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:113
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:135
+msgid "Child level"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:116
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:138
+msgid "No child level"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:125
+msgid "Category Navigations"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:128
+msgid "Select (a) category(s) to exclude."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:150
+msgid "Archive Page TEXT"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:153
+msgid "MAX Characters."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:159
+msgid "Archive Thumbnail Size"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:162
+msgid "The maximum value of width."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:166
+msgid "The maximum value of height."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:175
+msgid "Navigation No.01"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:178
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:202
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:226
+msgid "Select form."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:179
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:203
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:227
+msgid " : Select pages."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:179
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:203
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:227
+msgid " : Select url."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:182
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:206
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:230
+msgid "Select page."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:183
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:207
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:231
+msgid "Select"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:186
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:210
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:234
+msgid "URL input."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:190
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:214
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:238
+msgid "Upload image : "
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:192
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:216
+#, php-format
+msgid "Recommended size : W:%s"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:195
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:219
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:243
+msgid "Preview"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:199
+msgid "Navigation No.02"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:223
+msgid "Header Banner"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/megumi_theme_setting.php:240
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:123
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:129
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:135
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:141
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:147
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:153
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:159
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:165
+#, php-format
+msgid "Recommended size : W:%s H:%s"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/seo.php:29
+msgid "Googlean Alytics"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/seo.php:33
+msgid "Google Web Master Tools"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/seo.php:37
+msgid "Site Explorer"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/seo.php:41
+msgid "Bing"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/images_upload_conf.php:272
+#, php-format
+msgid "Permission Error (%s)"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/images_upload_conf.php:276
+#, php-format
+msgid "File \"%s\" is not a image (jpeg, png, gif)"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:113
+msgid ""
+"The recommended size is larger than the image size is automatically reduced."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:118
+msgid "Image Preview."
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:121
+msgid "Logo"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:127
+msgid "Page Navigation"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:133
+msgid "Category Navigation"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:139
+msgid "No Image"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:145
+msgid "html background"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:151
+msgid "Body background"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:157
+msgid "Contents background"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/theme_img.php:163
+msgid "Go Top"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:39
+#: /magumi_themes/trunk/megumi_fujin/script/theme_function_load.php:58
+msgid "Read the rest of this entry &nbsp;&raquo;"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/search.php:4
+msgid "Search Results"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/search.php:27
+msgid "No posts found. Try a different search?"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/page.php:7
+msgid "Read the rest of this page &raquo;"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/page.php:8
+msgid "Pages:"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/404.php:4
+msgid "Error 404 - Not Found"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/functions.php:10
+msgid "Sidebar Home &amp; Pages"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/functions.php:17
+msgid "Sidebar Home Only"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/functions.php:24
+msgid "Sidebar Pages Only"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/functions.php:31
+#, php-format
+msgid "Footer No.%d"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/functions.php:150
+#: /magumi_themes/trunk/megumi_fujin/functions.php:170
+msgid "Reset"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/footer.php:7
+msgid "Menu"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/footer.php:12
+msgid "Site Admin"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/footer.php:14
+msgid "Login"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/footer.php:19
+msgid "Categories"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/footer.php:28
+msgid "Banner"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/footer.php:30
+msgid "MEGUMI Themes"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/footer.php:38
+msgid "Designed by:"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/footer.php:39
+msgid ""
+"DigitalCube Co., Ltd.<br />HQ: Postal code 650-0045<br />Kobe incubation "
+"offices 4F, Minatoshima 9-1,<br />Kobe-shi Chuou-ku, Hyougo-ken, JAPAN"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/footer.php:40
+msgid "&raquo;More info"
+msgstr ""
+
+#: /magumi_themes/trunk/megumi_fujin/footer.php:41
+msgid "DigitalCube Co., Ltd."
+msgstr ""

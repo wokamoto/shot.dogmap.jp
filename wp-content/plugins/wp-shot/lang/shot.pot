@@ -1,0 +1,422 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-shot 0.4.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-19 16:32+0900\n"
+"Last-Translator: wokamoto <wokamoto1973@gmail.com>\n"
+"Language-Team: WordPress Plugins/JSeries <http://wppluginsj.sourceforge.jp/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# description
+msgid "You can attach images inline in your email messages and they'll be shown as an image in your wordpress article. (WordPress 2.1+ only)"
+msgstr ""
+
+#: ../class-pop3.php:82
+#: ../class-pop3.php:90
+#: ../class-pop3.php:102
+msgid "POP3 connect:"
+msgstr ""
+
+#: ../class-pop3.php:82
+msgid "No server specified"
+msgstr ""
+
+#: ../class-pop3.php:90
+#: ../class-pop3.php:102
+#: ../class-pop3.php:147
+#: ../class-pop3.php:282
+#: ../class-pop3.php:336
+#: ../class-pop3.php:347
+#: ../class-pop3.php:395
+#: ../class-pop3.php:428
+#: ../class-pop3.php:461
+#: ../class-pop3.php:560
+#: ../class-pop3.php:583
+msgid "Error "
+msgstr ""
+
+#: ../class-pop3.php:112
+msgid "POP3: premature NOOP OK, NOT an RFC 1939 Compliant server"
+msgstr ""
+
+#: ../class-pop3.php:126
+msgid "POP3 noop:"
+msgstr ""
+
+#: ../class-pop3.php:126
+#: ../class-pop3.php:192
+#: ../class-pop3.php:241
+#: ../class-pop3.php:266
+#: ../class-pop3.php:308
+#: ../class-pop3.php:382
+#: ../class-pop3.php:421
+#: ../class-pop3.php:451
+#: ../class-pop3.php:485
+#: ../class-pop3.php:548
+#: ../class-pop3.php:616
+msgid "No connection to server"
+msgstr ""
+
+#: ../class-pop3.php:139
+#: ../class-pop3.php:142
+#: ../class-pop3.php:147
+msgid "POP3 user:"
+msgstr ""
+
+#: ../class-pop3.php:139
+msgid "no login ID submitted"
+msgstr ""
+
+#: ../class-pop3.php:142
+#: ../class-pop3.php:162
+msgid "connection not established"
+msgstr ""
+
+#: ../class-pop3.php:159
+#: ../class-pop3.php:162
+#: ../class-pop3.php:167
+#: ../class-pop3.php:176
+msgid "POP3 pass:"
+msgstr ""
+
+#: ../class-pop3.php:159
+#: ../class-pop3.php:201
+msgid "No password submitted"
+msgstr ""
+
+#: ../class-pop3.php:167
+msgid "authentication failed "
+msgstr ""
+
+#: ../class-pop3.php:176
+#: ../class-pop3.php:225
+msgid "NOOP failed. Server not RFC 1939 compliant"
+msgstr ""
+
+#: ../class-pop3.php:192
+#: ../class-pop3.php:198
+#: ../class-pop3.php:201
+#: ../class-pop3.php:206
+#: ../class-pop3.php:216
+#: ../class-pop3.php:225
+msgid "POP3 apop:"
+msgstr ""
+
+#: ../class-pop3.php:198
+msgid "No login ID submitted"
+msgstr ""
+
+#: ../class-pop3.php:206
+msgid "No server banner"
+msgstr ""
+
+#: ../class-pop3.php:206
+#: ../class-pop3.php:216
+msgid "abort"
+msgstr ""
+
+#: ../class-pop3.php:216
+msgid "apop authentication failed"
+msgstr ""
+
+#: ../class-pop3.php:241
+msgid "POP3 login:"
+msgstr ""
+
+#: ../class-pop3.php:266
+#: ../class-pop3.php:282
+msgid "POP3 top:"
+msgstr ""
+
+#: ../class-pop3.php:308
+#: ../class-pop3.php:336
+#: ../class-pop3.php:347
+#: ../class-pop3.php:359
+msgid "POP3 pop_list:"
+msgstr ""
+
+#: ../class-pop3.php:359
+msgid "Premature end of list"
+msgstr ""
+
+#: ../class-pop3.php:382
+#: ../class-pop3.php:395
+msgid "POP3 get:"
+msgstr ""
+
+#: ../class-pop3.php:421
+#: ../class-pop3.php:428
+msgid "POP3 last:"
+msgstr ""
+
+#: ../class-pop3.php:451
+#: ../class-pop3.php:461
+msgid "POP3 reset:"
+msgstr ""
+
+#: ../class-pop3.php:485
+#: ../class-pop3.php:491
+msgid "POP3 send_cmd:"
+msgstr ""
+
+#: ../class-pop3.php:491
+msgid "Empty command string"
+msgstr ""
+
+#: ../class-pop3.php:511
+msgid "POP3 quit:"
+msgstr ""
+
+#: ../class-pop3.php:511
+msgid "connection does not exist"
+msgstr ""
+
+#: ../class-pop3.php:548
+#: ../class-pop3.php:560
+#: ../class-pop3.php:583
+msgid "POP3 uidl:"
+msgstr ""
+
+#: ../class-pop3.php:616
+#: ../class-pop3.php:621
+#: ../class-pop3.php:627
+msgid "POP3 delete:"
+msgstr ""
+
+#: ../class-pop3.php:621
+msgid "No msg number submitted"
+msgstr ""
+
+#: ../class-pop3.php:627
+msgid "Command failed "
+msgstr ""
+
+#: ../wp-shot.php:179
+msgid "You don't have permission to access the URL on this server."
+msgstr ""
+
+#: ../wp-shot.php:207
+msgid "Changed the Layout Options."
+msgstr ""
+
+#: ../wp-shot.php:225
+msgid "Changed the Posting Options."
+msgstr ""
+
+#: ../wp-shot.php:248
+msgid "Options Deleted."
+msgstr ""
+
+#: ../wp-shot.php:259
+msgid "Shot Settings"
+msgstr ""
+
+#: ../wp-shot.php:264
+msgid "Set the <a href=\"./users.php\">user</a> for E-mail posting with the level of Author(Level2)."
+msgstr ""
+
+#: ../wp-shot.php:267
+msgid "Enter your mobile phone's E-Mail address here."
+msgstr ""
+
+#: ../wp-shot.php:271
+msgid "Create a <a href=\"./categories.php\">category</a> for E-mail posting."
+msgstr ""
+
+#: ../wp-shot.php:274
+#, php-format
+msgid "The current selected category: %s "
+msgstr ""
+
+#: ../wp-shot.php:278
+msgid "Use the mobile phone's E-mail address for posting."
+msgstr ""
+
+#: ../wp-shot.php:281
+msgid "All the mail in the inbox will be deleted after the blog recieves them. Please make sure to have the E-mail address only for posting blog entries."
+msgstr ""
+
+#: ../wp-shot.php:285
+msgid "Set the mail server via the Option => <a href=\"options-writing.php\">Writting Option</a>"
+msgstr ""
+
+#: ../wp-shot.php:288
+msgid "The Current Settings:"
+msgstr ""
+
+#: ../wp-shot.php:290
+msgid "Mail server:"
+msgstr ""
+
+#: ../wp-shot.php:291
+msgid "Port:"
+msgstr ""
+
+#: ../wp-shot.php:292
+msgid "Login name:"
+msgstr ""
+
+#: ../wp-shot.php:293
+msgid "Password:"
+msgstr ""
+
+#: ../wp-shot.php:299
+msgid "translate line_218 into en_US."
+msgstr ""
+
+#: ../wp-shot.php:302
+msgid "translate line_222 into en_US."
+msgstr ""
+
+#: ../wp-shot.php:306
+msgid "Create a directry for images and set the rewritable permission."
+msgstr ""
+
+#: ../wp-shot.php:309
+msgid "<a href=\"./options-misc.php\">Keep the Current Directry</a> => "
+msgstr ""
+
+#: ../wp-shot.php:312
+msgid "Create Your Own => Fill out the following both text fields without slashes (/) at the end."
+msgstr ""
+
+#: ../wp-shot.php:315
+msgid "Absolute Path of the Directry"
+msgstr ""
+
+#: ../wp-shot.php:318
+#: ../wp-shot.php:324
+msgid "Example"
+msgstr ""
+
+#: ../wp-shot.php:321
+msgid "URL of the Directry"
+msgstr ""
+
+#: ../wp-shot.php:329
+msgid "Interval when mail is checked."
+msgstr ""
+
+#: ../wp-shot.php:333
+msgid "minute"
+msgstr ""
+
+#: ../wp-shot.php:340
+msgid "The last execution log."
+msgstr ""
+
+#: ../wp-shot.php:347
+msgid "Save the Options"
+msgstr ""
+
+#: ../wp-shot.php:352
+msgid "Layout Settings"
+msgstr ""
+
+#: ../wp-shot.php:356
+msgid "Do Not Use Thumbnail"
+msgstr ""
+
+#: ../wp-shot.php:357
+msgid "Simply an Image will be placed above texts"
+msgstr ""
+
+#: ../wp-shot.php:360
+msgid "Use Thumbnail"
+msgstr ""
+
+#: ../wp-shot.php:361
+msgid "The following fields must be filled for this option."
+msgstr ""
+
+#: ../wp-shot.php:364
+msgid "The maximum length (px)"
+msgstr ""
+
+#: ../wp-shot.php:368
+msgid "Rotate"
+msgstr ""
+
+#: ../wp-shot.php:372
+msgid "Attributes for the IMG tag<br />(only when the thumbnail is used.)"
+msgstr ""
+
+#: ../wp-shot.php:373
+msgid "Example : class=\"highslide\" onclick=\"return hs.expand(this)\""
+msgstr ""
+
+#: ../wp-shot.php:376
+msgid "Save Layout Option"
+msgstr ""
+
+#: ../wp-shot.php:381
+msgid "Uninstall"
+msgstr ""
+
+#: ../wp-shot.php:383
+msgid "Delete Options"
+msgstr ""
+
+#: ../wp-shot.php:392
+msgid "WP-Shot Config"
+msgstr ""
+
+#: ../wp-shot.php:392
+msgid "WP-Shot"
+msgstr ""
+
+#: ../wp-shot.php:441
+msgid "Nothing scheduled."
+msgstr ""
+
+#: ../wp-shot.php:447
+#, php-format
+msgid "Anytime after <strong>%s</strong> execute tasks."
+msgstr ""
+
+#: ../wp-shot.php:484
+#: ../wp-shot.php:493
+#: ../wp-shot.php:659
+#, php-format
+msgid "Oops: %s"
+msgstr ""
+
+#: ../wp-shot.php:494
+#: ../wp-shot.php:499
+msgid "There doesn't seem to be any new mail."
+msgstr ""
+
+#: ../wp-shot.php:665
+#, php-format
+msgid "Mission complete.  Message <strong>%s</strong> deleted."
+msgstr ""
+
+#: ../wp-shot.php:928
+msgid "File not found"
+msgstr ""
+
+#: ../wp-shot.php:940
+#: ../wp-shot.php:946
+#: ../wp-shot.php:952
+#: ../wp-shot.php:955
+msgid "Filetype not supported. Thumbnail not created."
+msgstr ""
+
+#: ../wp-shot.php:976
+msgid ".thumbnail"
+msgstr ""
+
+#: ../wp-shot.php:986
+#: ../wp-shot.php:992
+#: ../wp-shot.php:998
+#: ../wp-shot.php:1003
+msgid "Thumbnail path invalid"
+msgstr ""
+

@@ -1,0 +1,453 @@
+# Japanese Language File for wp-shot (shot-ja.po)
+# Copyright (c) 2006 十六夜.JP : http://xn--65q67bs6i.jp/
+# Copyright (c) 2009 wokamoto : wokamoto1973@gmail.com
+# This file is distributed under the same license as the WordPress package.
+# Santaro Otsukare <staybymyside [at] gmail.com>, 2006.
+# wokamoto <wokamoto1973@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-shot 0.4.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-19 16:32+0900\n"
+"PO-Revision-Date: 2009-10-19 16:35+0900\n"
+"Last-Translator: wokamoto <wokamoto1973@gmail.com>\n"
+"Language-Team: WordPress Plugins/JSeries <http://wppluginsj.sourceforge.jp/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+# description
+msgid "You can attach images inline in your email messages and they'll be shown as an image in your wordpress article. (WordPress 2.1+ only)"
+msgstr "外出先等から携帯電話のメール送信機能を利用して WordPress に記事を投稿できるようにするためのプラグインです。 (WordPress 2.1.x 以降で動作します)"
+
+#: ../class-pop3.php:82
+#: ../class-pop3.php:90
+#: ../class-pop3.php:102
+#, fuzzy
+msgid "POP3 connect:"
+msgstr "POP3 connect:"
+
+#: ../class-pop3.php:82
+msgid "No server specified"
+msgstr "サーバーが設定されていません"
+
+#: ../class-pop3.php:90
+#: ../class-pop3.php:102
+#: ../class-pop3.php:147
+#: ../class-pop3.php:282
+#: ../class-pop3.php:336
+#: ../class-pop3.php:347
+#: ../class-pop3.php:395
+#: ../class-pop3.php:428
+#: ../class-pop3.php:461
+#: ../class-pop3.php:560
+#: ../class-pop3.php:583
+msgid "Error "
+msgstr "エラー "
+
+#: ../class-pop3.php:112
+#, fuzzy
+msgid "POP3: premature NOOP OK, NOT an RFC 1939 Compliant server"
+msgstr "POP3: premature NOOP OK, NOT an RFC 1939 Compliant server"
+
+#: ../class-pop3.php:126
+#, fuzzy
+msgid "POP3 noop:"
+msgstr "POP3 noop:"
+
+#: ../class-pop3.php:126
+#: ../class-pop3.php:192
+#: ../class-pop3.php:241
+#: ../class-pop3.php:266
+#: ../class-pop3.php:308
+#: ../class-pop3.php:382
+#: ../class-pop3.php:421
+#: ../class-pop3.php:451
+#: ../class-pop3.php:485
+#: ../class-pop3.php:548
+#: ../class-pop3.php:616
+msgid "No connection to server"
+msgstr "サーバーに接続されていません"
+
+#: ../class-pop3.php:139
+#: ../class-pop3.php:142
+#: ../class-pop3.php:147
+#, fuzzy
+msgid "POP3 user:"
+msgstr "POP3 user:"
+
+#: ../class-pop3.php:139
+msgid "no login ID submitted"
+msgstr "ログイン ID が入力されていません"
+
+#: ../class-pop3.php:142
+#: ../class-pop3.php:162
+msgid "connection not established"
+msgstr "接続できません"
+
+#: ../class-pop3.php:159
+#: ../class-pop3.php:162
+#: ../class-pop3.php:167
+#: ../class-pop3.php:176
+#, fuzzy
+msgid "POP3 pass:"
+msgstr "POP3 pass:"
+
+#: ../class-pop3.php:159
+#: ../class-pop3.php:201
+msgid "No password submitted"
+msgstr "パスワードが入力されていません"
+
+#: ../class-pop3.php:167
+#, fuzzy
+msgid "authentication failed "
+msgstr "authentication failed "
+
+#: ../class-pop3.php:176
+#: ../class-pop3.php:225
+#, fuzzy
+msgid "NOOP failed. Server not RFC 1939 compliant"
+msgstr "NOOP failed. Server not RFC 1939 compliant"
+
+#: ../class-pop3.php:192
+#: ../class-pop3.php:198
+#: ../class-pop3.php:201
+#: ../class-pop3.php:206
+#: ../class-pop3.php:216
+#: ../class-pop3.php:225
+#, fuzzy
+msgid "POP3 apop:"
+msgstr "POP3 apop:"
+
+#: ../class-pop3.php:198
+msgid "No login ID submitted"
+msgstr "ログイン ID が入力されていません"
+
+#: ../class-pop3.php:206
+msgid "No server banner"
+msgstr "サーバーバナーなし"
+
+#: ../class-pop3.php:206
+#: ../class-pop3.php:216
+msgid "abort"
+msgstr "中止"
+
+#: ../class-pop3.php:216
+msgid "apop authentication failed"
+msgstr "APOP 認証失敗"
+
+#: ../class-pop3.php:241
+#, fuzzy
+msgid "POP3 login:"
+msgstr "POP3 login:"
+
+#: ../class-pop3.php:266
+#: ../class-pop3.php:282
+#, fuzzy
+msgid "POP3 top:"
+msgstr "POP3 top:"
+
+#: ../class-pop3.php:308
+#: ../class-pop3.php:336
+#: ../class-pop3.php:347
+#: ../class-pop3.php:359
+#, fuzzy
+msgid "POP3 pop_list:"
+msgstr "POP3 pop_list:"
+
+#: ../class-pop3.php:359
+msgid "Premature end of list"
+msgstr "リストの途中終了"
+
+#: ../class-pop3.php:382
+#: ../class-pop3.php:395
+#, fuzzy
+msgid "POP3 get:"
+msgstr "POP3 get:"
+
+#: ../class-pop3.php:421
+#: ../class-pop3.php:428
+#, fuzzy
+msgid "POP3 last:"
+msgstr "POP3 last:"
+
+#: ../class-pop3.php:451
+#: ../class-pop3.php:461
+#, fuzzy
+msgid "POP3 reset:"
+msgstr "POP3 reset:"
+
+#: ../class-pop3.php:485
+#: ../class-pop3.php:491
+#, fuzzy
+msgid "POP3 send_cmd:"
+msgstr "POP3 send_cmd:"
+
+#: ../class-pop3.php:491
+msgid "Empty command string"
+msgstr "コマンド文字列は空です"
+
+#: ../class-pop3.php:511
+#, fuzzy
+msgid "POP3 quit:"
+msgstr "POP3 quit:"
+
+#: ../class-pop3.php:511
+msgid "connection does not exist"
+msgstr "接続は存在しません。"
+
+#: ../class-pop3.php:548
+#: ../class-pop3.php:560
+#: ../class-pop3.php:583
+#, fuzzy
+msgid "POP3 uidl:"
+msgstr "POP3 uidl:"
+
+#: ../class-pop3.php:616
+#: ../class-pop3.php:621
+#: ../class-pop3.php:627
+#, fuzzy
+msgid "POP3 delete:"
+msgstr "POP3 delete:"
+
+#: ../class-pop3.php:621
+msgid "No msg number submitted"
+msgstr "メッセージ番号が指定されていません。"
+
+#: ../class-pop3.php:627
+msgid "Command failed "
+msgstr "コマンドは失敗しました。"
+
+#: ../wp-shot.php:179
+msgid "You don't have permission to access the URL on this server."
+msgstr "アクセス権限がありません。"
+
+#: ../wp-shot.php:207
+msgid "Changed the Layout Options."
+msgstr "レイアウト設定を変更しました。"
+
+#: ../wp-shot.php:225
+msgid "Changed the Posting Options."
+msgstr "モバイル投稿設定を変更しました。"
+
+#: ../wp-shot.php:248
+msgid "Options Deleted."
+msgstr "wp-shot の設定は削除されました。"
+
+#: ../wp-shot.php:259
+msgid "Shot Settings"
+msgstr "モバイル投稿設定"
+
+#: ../wp-shot.php:264
+msgid "Set the <a href=\"./users.php\">user</a> for E-mail posting with the level of Author(Level2)."
+msgstr "メール投稿用の<a href=\"./users.php\">ユーザーを登録</a>し、作者(Author/Level2)以上の権限を付与する。"
+
+#: ../wp-shot.php:267
+msgid "Enter your mobile phone's E-Mail address here."
+msgstr "ここで作成するユーザーのメールアドレス欄にあなたの携帯電話のアドレスを登録します。"
+
+#: ../wp-shot.php:271
+msgid "Create a <a href=\"./categories.php\">category</a> for E-mail posting."
+msgstr "メール投稿用の<a href=\"./categories.php\">カテゴリーを作成</a>する。"
+
+#: ../wp-shot.php:274
+#, php-format
+msgid "The current selected category: %s "
+msgstr "現在は「%s」カテゴリーが選択されています。"
+
+#: ../wp-shot.php:278
+msgid "Use the mobile phone's E-mail address for posting."
+msgstr "携帯電話からの投稿用メールアドレスを用意する。"
+
+#: ../wp-shot.php:281
+msgid "All the mail in the inbox will be deleted after the blog recieves them. Please make sure to have the E-mail address only for posting blog entries."
+msgstr "ブログへの取り込み処理を行った時点で、メールボックス内の全てのメールが削除されます。<br />必ず「他の用件に使用しない投稿専用のメールアドレス」をご用意ください。"
+
+#: ../wp-shot.php:285
+msgid "Set the mail server via the Option => <a href=\"options-writing.php\">Writting Option</a>"
+msgstr "オプション ⇒ <a href=\"options-writing.php\">投稿設定</a>でメールサーバー情報を登録する。"
+
+#: ../wp-shot.php:288
+msgid "The Current Settings:"
+msgstr "現在は以下のように設定されています。"
+
+#: ../wp-shot.php:290
+msgid "Mail server:"
+msgstr "メールサーバー:"
+
+#: ../wp-shot.php:291
+msgid "Port:"
+msgstr "ポート:"
+
+#: ../wp-shot.php:292
+msgid "Login name:"
+msgstr "ログイン名:"
+
+#: ../wp-shot.php:293
+msgid "Password:"
+msgstr "パスワード:"
+
+#: ../wp-shot.php:299
+msgid "translate line_218 into en_US."
+msgstr "RFC 1939 に関するエラーへの対処方法を選択"
+
+#: ../wp-shot.php:302
+msgid "translate line_222 into en_US."
+msgstr "RFC 1939 に準拠したメールサーバーからの取り込みのみを許可"
+
+#: ../wp-shot.php:306
+msgid "Create a directry for images and set the rewritable permission."
+msgstr "画像保存用のディレクトリを用意し、書き込み可能なパーミッションを設定する。"
+
+#: ../wp-shot.php:309
+msgid "<a href=\"./options-misc.php\">Keep the Current Directry</a> => "
+msgstr "<a href=\"./options-misc.php\">現状のまま</a> ⇒"
+
+#: ../wp-shot.php:312
+msgid "Create Your Own => Fill out the following both text fields without slashes (/) at the end."
+msgstr "別途に作成 ⇒ こちらを選択した場合は以下の両欄にも記入。最後に(/)は付けないこと。"
+
+#: ../wp-shot.php:315
+msgid "Absolute Path of the Directry"
+msgstr "ディレクトリの絶対パス"
+
+#: ../wp-shot.php:318
+#: ../wp-shot.php:324
+msgid "Example"
+msgstr "記述例"
+
+#: ../wp-shot.php:321
+msgid "URL of the Directry"
+msgstr "ディレクトリまでのURL"
+
+#: ../wp-shot.php:329
+msgid "Interval when mail is checked."
+msgstr "メールをチェックする間隔"
+
+#: ../wp-shot.php:333
+msgid "minute"
+msgstr "分"
+
+#: ../wp-shot.php:340
+msgid "The last execution log."
+msgstr "前回の実行結果"
+
+#: ../wp-shot.php:347
+msgid "Save the Options"
+msgstr "モバイル投稿設定を保存"
+
+#: ../wp-shot.php:352
+msgid "Layout Settings"
+msgstr "レイアウト設定"
+
+#: ../wp-shot.php:356
+msgid "Do Not Use Thumbnail"
+msgstr "サムネイルを使用しない"
+
+#: ../wp-shot.php:357
+msgid "Simply an Image will be placed above texts"
+msgstr "単純に画像が上で文章が下のスタイルが適用されます。"
+
+#: ../wp-shot.php:360
+msgid "Use Thumbnail"
+msgstr "サムネイルを使用する"
+
+#: ../wp-shot.php:361
+msgid "The following fields must be filled for this option."
+msgstr "こちらを選択した場合は併せて長辺側サイズも指定してください。"
+
+#: ../wp-shot.php:364
+msgid "The maximum length (px)"
+msgstr "長辺側のサイズ (px)"
+
+#: ../wp-shot.php:368
+msgid "Rotate"
+msgstr "回転角"
+
+#: ../wp-shot.php:372
+msgid "Attributes for the IMG tag<br />(only when the thumbnail is used.)"
+msgstr "画像のリンクタグに追加する属性<br />(サムネイル表示時のみ)"
+
+#: ../wp-shot.php:373
+msgid "Example : class=\"highslide\" onclick=\"return hs.expand(this)\""
+msgstr "記述例 : class=\"highslide\" onclick=\"return hs.expand(this)\""
+
+#: ../wp-shot.php:376
+msgid "Save Layout Option"
+msgstr "レイアウト設定を保存"
+
+#: ../wp-shot.php:381
+msgid "Uninstall"
+msgstr "アンインストール"
+
+#: ../wp-shot.php:383
+msgid "Delete Options"
+msgstr "設定を削除"
+
+#: ../wp-shot.php:392
+msgid "WP-Shot Config"
+msgstr "モバイル投稿設定画面"
+
+#: ../wp-shot.php:392
+msgid "WP-Shot"
+msgstr "モバイル投稿"
+
+#: ../wp-shot.php:399
+msgid "Settings"
+msgstr "設定"
+
+#: ../wp-shot.php:450
+msgid "Nothing scheduled."
+msgstr "予定されたスケジュールはありません"
+
+#: ../wp-shot.php:456
+#, php-format
+msgid "Anytime after <strong>%s</strong> execute tasks."
+msgstr "次回のメール取得実行予定時刻:<br /> <strong>%s</strong>"
+
+#: ../wp-shot.php:493
+#: ../wp-shot.php:502
+#: ../wp-shot.php:668
+#, php-format
+msgid "Oops: %s"
+msgstr "エラー: %s"
+
+#: ../wp-shot.php:503
+#: ../wp-shot.php:508
+msgid "There doesn't seem to be any new mail."
+msgstr "新しいメールはありません。"
+
+#: ../wp-shot.php:674
+#, php-format
+msgid "Mission complete.  Message <strong>%s</strong> deleted."
+msgstr "任務完了。メッセージ <strong>%s</strong> を削除しました。"
+
+#: ../wp-shot.php:937
+msgid "File not found"
+msgstr "ファイルが見つかりませんでした。"
+
+#: ../wp-shot.php:949
+#: ../wp-shot.php:955
+#: ../wp-shot.php:961
+#: ../wp-shot.php:964
+msgid "Filetype not supported. Thumbnail not created."
+msgstr "サポートされていないファイル形式です。サムネイルは作成されません。"
+
+#: ../wp-shot.php:985
+msgid ".thumbnail"
+msgstr ".thumbnail"
+
+#: ../wp-shot.php:995
+#: ../wp-shot.php:1001
+#: ../wp-shot.php:1007
+#: ../wp-shot.php:1012
+msgid "Thumbnail path invalid"
+msgstr "サムネイルのパスが無効です。"
+

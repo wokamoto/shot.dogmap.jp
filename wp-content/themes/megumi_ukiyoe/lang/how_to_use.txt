@@ -1,0 +1,14 @@
+This theme is i18n-ed, so you can easily translate those strings into your language.
+
+1. Make your_language_code.po file from megumi.pot file.
+2. Translate strings in your_language_code.po file with a dedicated tool like Poedit.
+3. Compile your_language_code.mo file from your_language_code.po file with the tool.
+4. Put the .mo file here
+
+See also:
+http://codex.wordpress.org/Localizing_WordPress
+
+When you make your language file, please send it to us:
+info@dgitalcube.com
+We will bundle your file into our theme packgage.
+

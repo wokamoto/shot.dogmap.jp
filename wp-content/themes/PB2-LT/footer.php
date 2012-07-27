@@ -1,0 +1,3 @@
+<div id="footer">powered by <a href="http://everydays.hassii.com/photo-biyori">Photo-Biyori</a> flavored <a href="http://wordpress.org/">WordPress</a> on <a href="http://www.megumi-server.net/" title="め組サーバ｜WordPress サーバ｜ホスティング">め組 VPS</a><?php wp_register(' | ',''); ?></div>
+</div>
+<?php wp_footer(); ?></body></html><!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. used <?php echo round(memory_get_peak_usage() / 1024 / 1024, 2); ?> MB memory. <?php echo date('Y-m-d H:i:sP'); ?> -->

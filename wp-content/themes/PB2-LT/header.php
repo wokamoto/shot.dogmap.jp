@@ -11,6 +11,7 @@ wp_enqueue_script(
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="twitter:site" content="@wokamoto" />
 <title><?php bloginfo('name'); ?><?php wp_title('&raquo;', true, 'left'); ?> </title>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Simple Tweet
-Version: 1.3.8.2
+Version: 1.3.8.3
 Plugin URI: http://wppluginsj.sourceforge.jp/simple-tweet/
 Description: This is a plugin creating a new tweet including a URL of new post on your wordpress.
 Author: wokamoto
@@ -83,7 +83,7 @@ class SimpleTweet {
 	const TWEET_MAX = 140;
 	const TWEET_TIMEOUT = 30;
 	const TWEET_HOME_URL = 'http://twitter.com/';
-	const TWEET_SENT_URL = 'http://twitter.com/statuses/update.xml';
+	const TWEET_SENT_URL = 'http://api.twitter.com/1/statuses/update.xml';
 	const TWEET_OAUTH_CLIENTS_URL = 'http://twitter.com/oauth_clients';
 	const TWEET_TINYURL_LIMIT = 15552000;	// 60 * 60 * 24 * 30 * 6
 	const TWEET_TINYURL_URL = 'http://tinyurl.com/api-create.php?url=';
@@ -266,7 +266,7 @@ class SimpleTweet {
 			if (function_exists('get_user_meta')) {
 				$user_options = get_user_meta($user_id, $this->option_name, true);
 				if (!is_array($user_options)) {
-					$user_options = get_usermeta($user_id, $this->option_name);
+					$user_options = get_user_meta($user_id, $this->option_name);
 					update_user_meta($user_id, $this->option_name, $user_options);
 				}
 			} else {
@@ -498,9 +498,6 @@ class SimpleTweet {
 	// Add Content
 	public function add_content($content) {
 		global $post;
-
-		if ( is_feed() )
-			return $content;
 
 		list($options, $current_user_options) = $this->_get_options( $post->post_author );
 		if ( $options['add_content'] )

@@ -12,6 +12,7 @@ wp_enqueue_script(
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta name="twitter:site" content="@wokamoto" />
+<meta name="viewport" content="width=device-width" />
 <title><?php bloginfo('name'); ?><?php wp_title('&raquo;', true, 'left'); ?> </title>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -22,7 +23,7 @@ wp_enqueue_script(
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="alternate stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" media="screen" title="original" />
 -->
-<?php wp_enqueue_script( 'comment-reply' ); ?>
+<?php //wp_enqueue_script( 'comment-reply' ); ?>
 <?php wp_head(); ?>
 </head> 
 <body <?php body_class(); ?>>

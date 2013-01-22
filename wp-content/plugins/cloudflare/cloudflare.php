@@ -3,7 +3,7 @@
 Plugin Name: CloudFlare
 Plugin URI: http://www.cloudflare.com/wiki/CloudFlareWordPressPlugin
 Description: CloudFlare integrates your blog with the CloudFlare platform.
-Version: 1.3.7
+Version: 1.3.9
 Author: Ian Pye, Jerome Chen, James Greene (CloudFlare Team)
 License: GPLv2
 */
@@ -26,7 +26,7 @@ Plugin adapted from the Akismet WP plugin.
 
 */	
 
-define('CLOUDFLARE_VERSION', '1.3.7');
+define('CLOUDFLARE_VERSION', '1.3.9');
 require_once("ip_in_range.php");
 
 // Make sure we don't expose any info if called directly
@@ -44,7 +44,7 @@ function cloudflare_init() {
     $is_cf = ($_SERVER["HTTP_CF_CONNECTING_IP"])? TRUE: FALSE;    
 
     if (strpos($_SERVER["REMOTE_ADDR"], ":") === FALSE) {
-        $cf_ip_ranges = array("204.93.240.0/24", "204.93.177.0/24", "199.27.128.0/21", "173.245.48.0/20", "103.22.200.0/22", "141.101.64.0/18", "108.162.192.0/18","190.93.240.1/20");
+        $cf_ip_ranges = array("204.93.240.0/24", "204.93.177.0/24", "199.27.128.0/21", "173.245.48.0/20", "103.22.200.0/22", "141.101.64.0/18", "108.162.192.0/18","190.93.240.1/20","188.114.96.0/20", "198.41.128.0/17");
         // IPV4: Update the REMOTE_ADDR value if the current REMOTE_ADDR value is in the specified range.
         foreach ($cf_ip_ranges as $range) {
             if (ipv4_in_range($_SERVER["REMOTE_ADDR"], $range)) {
@@ -242,16 +242,16 @@ CloudFlare is a service that makes websites load faster and protects sites from 
     <p><input id="key" name="key" type="text" size="50" maxlength="48" value="<?php echo get_option('cloudflare_api_key'); ?>" style="font-family: 'Courier New', Courier, mono; font-size: 1.5em;" /> (<?php _e('<a href="https://www.cloudflare.com/my-account.html">Get this?</a>'); ?>)</p>
     <h3><label for="email"><?php _e('CloudFlare API Email'); ?></label></h3>
     <p><input id="email" name="email" type="text" size="50" maxlength="48" value="<?php echo get_option('cloudflare_api_email'); ?>" style="font-family: 'Courier New', Courier, mono; font-size: 1.5em;" /> (<?php _e('<a href="https://www.cloudflare.com/my-account.html">Get this?</a>'); ?>)
-    <h3><label for="dev_mode"><?php _e('Development Mode'); ?></label> <span style="font-size:9pt;">(<a href="http://support.cloudflare.com/kb/what-do-the-various-cloudflare-settings-do/what-does-cloudflare-development-mode-mean" " target="_blank">What is this?</a>)</span></h3>
+    <h3><label for="dev_mode"><?php _e('Development Mode'); ?></label> <span style="font-size:9pt;">(<a href="https://support.cloudflare.com/entries/22280726-what-does-cloudflare-development-mode-mean" " target="_blank">What is this?</a>)</span></h3>
 
-    <? if ($curl_installed) { ?>
+    <?php if ($curl_installed) { ?>
     <div style="font-family: 'Courier New', Courier, mono; font-size: 1.5em;">
     <input type="radio" name="dev_mode" value="0" <? if ($dev_mode == "off") echo "checked"; ?>> Off
     <input type="radio" name="dev_mode" value="1" <? if ($dev_mode == "on") echo "checked"; ?>> On
     </div>
-    <? } else { ?>
+    <?php } else { ?>
     You cannot toggle development mode because cURL is not installed for your domain.  Please contact a server administrator for assistance with installing cURL.
-    <? } ?>
+    <?php } ?>
     
     </p>
     <p class="submit"><input type="submit" name="submit" value="<?php _e('Update options &raquo;'); ?>" /></p>

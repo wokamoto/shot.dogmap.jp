@@ -11,9 +11,12 @@ Author URI: http://dogmap.jp/
   http://www.gnu.org/copyleft/gpl.html
 */
 wp_deregister_script('jquery');
-wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', array(), '1.7.1');
+wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', array(), '1.8.3');
 
 add_filter('got_rewrite','__return_true');
+
+// remove jetpack open graph tags
+add_filter( 'jetpack_enable_open_graph', '__return_false' );
 
 //  applied to the comment author's IP address prior to saving the comment in the database.
 function auto_reverse_proxy_pre_comment_user_ip() {

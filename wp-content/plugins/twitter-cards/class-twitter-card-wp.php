@@ -4,7 +4,11 @@ if ( ! class_exists( 'Twitter_Card' ) )
 	require_once( dirname(__FILE__) . '/includes/twitter-cards-php/twitter-card.php' );
 
 class Twitter_Card_WP extends Twitter_Card {
-
+/*
+	public function __construct( $card_type = '' ) {
+		parent::__construct( $card_type );
+	}
+*/
 	/**
 	 * Test if given URL is valid and matches allowed schemes
 	 *

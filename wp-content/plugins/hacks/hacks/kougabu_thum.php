@@ -2,30 +2,10 @@
 function use_kougabu_thumb($content) {
 	global $post;
 
-/*
-	if (is_feed())
-		return $content;
-	$thumb = str_replace(array("\r","\n"), '', preg_replace(
-		'/^.*(<img [^>]*>).*$/i' ,
-		'$1' ,
-		kougabu_get_images(array(
-			'before' => '' ,
-			'after' => '' ,
-			'post_id' => $post->ID ,
-			'echo' => false ,
-			'max_width' => 320 ,
-			'max_height' => 320
-		))));
-	$content = preg_replace(
-		'/^(<a [^>]*>)(<img [^>]*>)(<\/a>)(.*)/i' ,
-		'$1' . $thumb . '$3$4' ,
-		$content
-		);
-*/
 	$content = str_replace(' class="shot-float"', '', $content);
 	$content = preg_replace(
-		'/^(<a [^>]*><img )([^>]*><\/a>)(.*)/i' ,
-		'$1height="240" $2' . $post->post_title . '$3' ,
+		'/^(<a [^>]*href=[\'"])([^\'"]+)([\'"][^>]*>)(<img [^>]*src=[\'"])([^\'"]+)([\'"][^>]*>)(<\/a>)(.*)/i' ,
+		'$1$2$3$4$5$6$7<br>' . $post->post_title . '$8' ,
 		$content
 		);
 

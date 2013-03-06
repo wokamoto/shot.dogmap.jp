@@ -27,7 +27,7 @@ by <a href="http://shot.dogmap.jp/about/" rel="author"><?php the_author('nicknam
 </div>
 <div id="th_container">
 <?php // pb_before_after_thumbnails(7); ?>
-<?php pb_thumbnails(6); ?>
+<?php //pb_thumbnails(6); ?>
 <div class="clear"></div>
 </div>
 <?php endwhile; else: ?>

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Simple Tweet
-Version: 1.3.8.3
+Version: 1.4.0.2
 Plugin URI: http://wppluginsj.sourceforge.jp/simple-tweet/
 Description: This is a plugin creating a new tweet including a URL of new post on your wordpress.
 Author: wokamoto
@@ -13,7 +13,7 @@ License:
  Released under the GPL license
   http://www.gnu.org/copyleft/gpl.html
 
-  Copyright 2008 - 2011 wokamoto (email : wokamoto1973@gmail.com)
+  Copyright 2008 - 2013 wokamoto (email : wokamoto1973@gmail.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -28,14 +28,6 @@ License:
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
-Includes:
- abraham's twitteroauth at master - GitHub
-  PHP library for working with Twitter's OAuth API.
-  Copyright (c) 2009 Abraham Williams - http://abrah.am - abraham@poseurte.ch
-  Documentation: http://wiki.github.com/abraham/twitteroauth/documentation
-  Source: http://github.com/abraham/twitteroauth
-  Twitter: http://apiwiki.twitter.com
 */
 
 /**************************************************************************************
@@ -47,22 +39,21 @@ global $simple_tweet;
 /**************************************************************************************
  * Require Twitter OAuth
  *************************************************************************************/
-if ( version_compare(phpversion(), "5.0.0", ">=") && function_exists('curl_init') && !class_exists('TwitterOAuth') )
-	require_once(dirname(__FILE__).'/includes/twitterOAuth.php');
-
+if ( !class_exists('Codebird') )
+	require_once(dirname(__FILE__).'/codebird-php/codebird.php');
 
 /**************************************************************************************
  * Template Tag tweet_this_link
  *  usage : <?php if (function_exists('tweet_this_link')) tweet_this_link(); ?>
  *************************************************************************************/
-function tweet_this_link($inreply_to = FALSE, $echo = TRUE) {
+function tweet_this_link($inreply_to = false, $echo = true) {
 	global $simple_tweet;
 
 	if ( !isset($simple_tweet) )
 		$simple_tweet = new SimpleTweet();
 
 	$tweet_this = $simple_tweet->tweet_this_link($inreply_to);
-	if ( $tweet_this === FALSE )
+	if ( $tweet_this === false )
 		return;
 
 	if ( $echo )
@@ -80,10 +71,9 @@ class SimpleTweet {
 	public $twitter_client_url = 'http://wordpress.org/extend/plugins/simple-tweet/';
 
 	// Constant
-	const TWEET_MAX = 140;
+	const TWEET_MAX = 130;
 	const TWEET_TIMEOUT = 30;
 	const TWEET_HOME_URL = 'http://twitter.com/';
-	const TWEET_SENT_URL = 'http://api.twitter.com/1/statuses/update.xml';
 	const TWEET_OAUTH_CLIENTS_URL = 'http://twitter.com/oauth_clients';
 	const TWEET_TINYURL_LIMIT = 15552000;	// 60 * 60 * 24 * 30 * 6
 	const TWEET_TINYURL_URL = 'http://tinyurl.com/api-create.php?url=';
@@ -101,46 +91,38 @@ class SimpleTweet {
 
 	const MESSAGE_FLAG = "simple_tweet_warn";
 
-
 	// Options
 	private $options;
 	private $current_user_options;
 
 	// Deafault Options
 	private $options_default = array(
-//		'user' => '' ,
-//		'password' => '' ,
 		'separator' => ' ' ,
-		'shorten' => TRUE ,
-		'tinyurl' => array(FALSE, self::TWEET_TINYURL_URL) ,
-		'bitly' => array(FALSE, self::TWEET_BITLY_USER, self::TWEET_BITLY_APIKEY) ,
-		'jmp' => array(FALSE, self::TWEET_JMP_USER, self::TWEET_JMP_APIKEY) ,
-		'isgd' => array(FALSE, self::TWEET_ISGD_URL) ,
-		'other_tinyurl' => array(FALSE, self::TWEET_TINYURL_URL) ,
+		'shorten' => true ,
+		'tinyurl' => array(false, self::TWEET_TINYURL_URL) ,
+		'bitly' => array(false, self::TWEET_BITLY_USER, self::TWEET_BITLY_APIKEY) ,
+		'jmp' => array(false, self::TWEET_JMP_USER, self::TWEET_JMP_APIKEY) ,
+		'isgd' => array(false, self::TWEET_ISGD_URL) ,
+		'other_tinyurl' => array(false, self::TWEET_TINYURL_URL) ,
 		'tweet_text' => '' ,
-		'tweet_without_url' => FALSE ,
-		'add_content' => FALSE ,
+		'tweet_without_url' => false ,
+		'add_content' => false ,
 		'tweet_this_link' => '' ,
 		'tweet_this_text' => '' ,
-		'log_write' => FALSE ,
+		'log_write' => false ,
 		'activate' => 0 ,
 		'deactivate' => 0 ,
 		'use_OAuth' => false ,
 		'consumer_key' => null ,
 		'consumer_secret' => null ,
-		'request_token' => null ,
-		'request_token_secret' => null ,
 		'oauth_token' => null ,
 		'access_token' => null ,
 		'access_token_secret' => null ,
-		'pin' => null ,
 		'oauth_reset' => false ,
 		);
 
 	private $consumer_key    = null;
 	private $consumer_secret = null;
-	private $request_token   = null;
-	private $request_token_secret = null;
 	private $oauth_token     = null;
 
 	// Common Variables
@@ -166,11 +148,8 @@ class SimpleTweet {
 		list($options, $current_user_options) = $this->_get_options();
 		$this->options = $this->_init_options( $options );
 
-                $this->consumer_key    = $this->options['consumer_key'];
-                $this->consumer_secret = $this->options['consumer_secret'];
-
-		$this->request_token        = $this->options['request_token'];
-		$this->request_token_secret = $this->options['request_token_secret'];
+		$this->consumer_key    = $this->options['consumer_key'];
+		$this->consumer_secret = $this->options['consumer_secret'];
 
 		$this->tweet_msg = '';
 
@@ -184,6 +163,8 @@ class SimpleTweet {
 
 			add_action('personal_options_update', array(&$this,'user_profile_update'));
 			add_action('edit_user_profile_update', array(&$this,'user_profile_update'));
+
+			add_action('admin_init', array(&$this, 'oauth_verifier'));
 
 			if (get_transient(self::MESSAGE_FLAG)) {
 				add_action("admin_notices", array(&$this, "admin_notice"));
@@ -454,6 +435,48 @@ class SimpleTweet {
 	// Action/Filter hook
 	//*****************************************************************************
 
+	// init
+	public function oauth_verifier( $oauth_verifier = null, $option_update = true ){
+		if (!isset($oauth_verifier))
+			$oauth_verifier = isset($_GET['oauth_verifier']) ? $_GET['oauth_verifier'] : false;
+
+		$access_token = '';
+		$access_token_secret = '';
+		if ( $oauth_verifier ) {
+			$request_token = get_transient($this->twitter_client_name.'-request_token');
+			$request_token_secret = get_transient($this->twitter_client_name.'-request_token_secret');
+			if ( isset($this->consumer_key) && isset($this->consumer_secret) && $request_token && $request_token_secret) {
+				// gets the access token
+				try {
+					if ($cb = $this->cb_object()) {
+						$cb->setToken($request_token, $request_token_secret);
+						$reply = $cb->oauth_accessToken(array(
+							'oauth_verifier' => $oauth_verifier,
+						));
+						$access_token = $this->options['access_token'] = $reply->oauth_token;
+						$access_token_secret = $this->options['access_token_secret'] = $reply->oauth_token_secret;
+
+						// options update
+						if ($option_update) {
+							global $userdata;
+							get_currentuserinfo();
+							$this->user_profile_update($userdata->ID, $this->options);
+						}
+					}
+					unset($cb);
+				} catch (Exception $e) {
+				}
+				delete_transient($this->twitter_client_name.'-request_token');
+				delete_transient($this->twitter_client_name.'-request_token_secret');
+				delete_transient($this->twitter_client_name.'-request_link');
+			}
+		}
+		return
+			!empty($access_token) && !empty($access_token_secret)
+			? array($access_token, $access_token_secret)
+			: false;
+	}
+
 	// publish post
 	public function publish_post($post_id = '') {
 		return $this->_do_tweet( $post_id );
@@ -613,10 +636,6 @@ class SimpleTweet {
 			$post_excerpt = (!empty($post->post_excerpt) ? $post->post_excerpt : $post->post_content);
 
 			$url = get_permalink($post_id);
-//			$tiny = $this->_get_post_meta($post_id, self::TWEET_METAKEY_URL);
-//			$tiny_url = ( is_array($tiny) && $tiny['limit'] > time()
-//				? $tiny['tiny_url']
-//				: '' );
 			$tiny_url = $this->_get_shortlink($url, $post_id, $this->options );
 			if ( !empty($tiny_url) )
 				$this->_update_post_meta(
@@ -652,15 +671,8 @@ class SimpleTweet {
 			if ($this->tweet_msg != $tweet_msg) {
 				$this->tweet_msg = $tweet_msg;
 
-				$tweet_result = FALSE;
-				if ( class_exists('TwitterOAuth') && !is_null($this->consumer_key) && !is_null($this->consumer_secret) && !is_null($this->options['access_token']) && !is_null($this->options['access_token_secret']) ) {
-					$tweet_result = $this->_post_twitter_OAuth($tweet_msg, $this->options['access_token'], $this->options['access_token_secret']);
-				}
-				//if ( $tweet_result === FALSE ) {
-				//	$tweet_result = $this->_post_twitter($tweet_msg, $this->options['user'], $this->options['password']);
-				//}
-
-				if ( $tweet_result !== FALSE ) {
+				$tweet_result = $this->statuses_update($tweet_msg, $this->options['access_token'], $this->options['access_token_secret']);
+				if ( $tweet_result ) {
 					$tweet_id = $this->_get_tweet_id($tweet_result);
 					$this->_log .= "id:{$tweet_id}\n";
 					if ( $this->_update_post_meta($post_id, self::TWEET_METAKEY_SID, $tweet_id) ) {
@@ -668,8 +680,8 @@ class SimpleTweet {
 					} else {
 						$this->_log = "** ERROR **\n\n" . $this->_log;
 					}
-				} else {
-					$this->_log = "** ERROR **\n\n" . $tweet_result . "\n" . $this->_log;
+				//} else {
+				//	$this->_log = "** ERROR **\n\n" . $tweet_result . "\n" . $this->_log;
 				}
 
 				$this->_update_post_meta($post_id, self::TWEET_METAKEY_RES, $tweet_result);
@@ -686,85 +698,38 @@ class SimpleTweet {
 		}
 	}
 
-
 	//*****************************************************************************
-	// Post to Twitter (OAuth)!
+	// initialize Code bird object
 	//*****************************************************************************
-	private function _post_twitter_OAuth( $tweet, $access_token = null, $access_token_secret = null ) {
-		if ( !class_exists('TwitterOAuth') || is_null($this->consumer_key) || is_null($this->consumer_secret) )
-			return FALSE;
-
-		if ( empty($tweet) || is_null($access_token) || is_null($access_token_secret) )
-			return FALSE;
-
-		$oauth = new TwitterOAuth($this->consumer_key, $this->consumer_secret, $access_token, $access_token_secret);
-		$result = $oauth->OAuthRequest(self::TWEET_SENT_URL, array("status"=>$tweet), "POST");
-		$this->_log .=	"--- OAuth Result ! ---\n" . "results:{$result}\n";
-		unset($oauth);
-
-		return $result;
+	private function cb_object(){
+		if ( !class_exists('Codebird') || !isset($this->consumer_key) || !isset($this->consumer_secret) )
+			return false;
+		Codebird::setConsumerKey($this->consumer_key, $this->consumer_secret);
+		return Codebird::getInstance();
 	}
 
+
 	//*****************************************************************************
-	// Post to Twitter!
+	// Post to Twitter
 	//*****************************************************************************
-	private function _post_twitter($tweet, $username = '', $password = '') {
-		if (empty($tweet) || empty($username) || empty($password))
-			return FALSE;
+	private function statuses_update( $tweet, $access_token = null, $access_token_secret = null ) {
+		if ( empty($tweet) || !isset($access_token) || !isset($access_token_secret) )
+			return false;
 
-		$result = FALSE;
-		$log = '';
-
-		if ( !class_exists('Snoopy') && file_exists(ABSPATH . WPINC . '/class-snoopy.php') )
-			require_once(ABSPATH . WPINC . '/class-snoopy.php');
-
-		if ( class_exists('Snoopy') ) {
-			$snoop = new Snoopy;
-			$snoop->agent = "{$this->twitter_client_name} ver.{$this->twitter_client_version} ({$this->twitter_client_url})";
-			$snoop->rawheaders = array(
-				'X-Twitter-Client' => $this->twitter_client_name ,
-				'X-Twitter-Client-Version' => $this->twitter_client_version ,
-				'X-Twitter-Client-URL' => $this->twitter_client_url
-				);
-			$snoop->user = $username;
-			$snoop->pass = $password;
-			$snoop->read_timeout = self::TWEET_TIMEOUT;
-			$snoop->timed_out = true;
-			$snoop->submit(
-				self::TWEET_SENT_URL ,
-				array(
-					'status' => $tweet ,
-					'source' => $this->twitter_client_name
-					)
-				);
-			$result = ( strpos($snoop->response_code, '200') !== FALSE
-				? $snoop->results
-				: FALSE
-				);
-			$log .=	"--- Class Snoopy Result ! ---\n" .
-				"response_code:{$snoop->response_code}" .
-				"results:{$snoop->results}\n" .
-				"status:{$snoop->status}\n" .
-				"error:{$snoop->error}\n";
-			unset($snoop);
+		try {
+			// statuses update
+			if ($cb = $this->cb_object()) {
+				$cb->setToken($access_token, $access_token_secret);
+				$result = $cb->statuses_update("status={$tweet}");
+				set_transient(self::MESSAGE_FLAG, $result, 60);
+				unset($cb);
+			} else {
+				return false;
+			}
+			return $result;
+		} catch (Exception $e) {
+			return false;
 		}
-
-		if ($result === FALSE) {
-			$params = '?status=' . rawurlencode($tweet) .
-				  '&source=' . $this->twitter_client_name;
-			$result = @file_get_contents(self::TWEET_SENT_URL.$params , false, stream_context_create(array(
-				 "http" => array(
-					"method" => "POST" ,
-					"header" => "Authorization: Basic ". base64_encode($username. ":". $password)
-					)
-				))
-			);
-			$log .=	 "\n--- file_get_contents Result ! ---\n"
-				."results:{$result}\n";
-		}
-		$this->_log .= $log;
-
-		return $result;
 	}
 
 	//*****************************************************************************
@@ -875,7 +840,7 @@ class SimpleTweet {
 				$snoop->read_timeout = self::TWEET_TIMEOUT;
 				$snoop->timed_out = true;
 				$snoop->fetch($get_url);
-				$result = ( strpos($snoop->response_code, '200') !== FALSE
+				$result = ( strpos($snoop->response_code, '200') !== false
 					? $snoop->results
 					: ''
 					);
@@ -888,7 +853,7 @@ class SimpleTweet {
 				$result = @file_get_contents( $get_url );
 			} else {
 				$fp = @fopen($get_url, 'r');
-				if ( $fp === FALSE ) return $result;
+				if ( $fp === false ) return $result;
 				while(!feof($fp)) {$result .= fread( $fp, 1024 );}
 				@fclose($fp);
 			}
@@ -901,26 +866,15 @@ class SimpleTweet {
 	// Get TweetID
 	//*****************************************************************************
 	private function _get_tweet_id($result = '') {
-		if (empty($result)) {
+		if (empty($result))
 			return '';
-		}
+		return isset($result->id) ? $result->id : '';
+	}
 
-		$tweet_id = '';
-//		if ( function_exists('simplexml_load_string') ) {
-//			$xml = simplexml_load_string($result);
-//			$tweet_id = $xml->id;
-//			unset($xml);
-//		} elseif ( preg_match_all('/<id>([0-9]+)<\/id>/i', $result, $matches, PREG_PATTERN_ORDER) ) {
-//			$tweet_id = $matches[1][0];
-//			unset($matches);
-//		}
-
-		if ( preg_match_all('/<id>([0-9]+)<\/id>/i', $result, $matches, PREG_PATTERN_ORDER) ) {
-			$tweet_id = $matches[1][0];
-		}
-		unset($matches);
-
-		return $tweet_id;
+	private function _get_tweet_text($result = '') {
+		if (empty($result))
+			return '';
+		return isset($result->text) ? $result->text : '';
 	}
 
 	//*****************************************************************************
@@ -933,35 +887,9 @@ class SimpleTweet {
 				check_admin_referer("update_options", "_wpnonce_update_options");
 
 			// get post data
-			$this->options = $this->_get_post_data( $_POST, $this->options, TRUE );
+			$this->options = $this->_get_post_data( $_POST, $this->options, true );
 			$this->consumer_key    = $this->options['consumer_key'];
 			$this->consumer_secret = $this->options['consumer_secret'];
-
-			// options update
-			$this->_update_options();
-
-			// Done!
-			$this->note .= "<strong>".__('Done!', $this->textdomain_name)."</strong>";
-
-		} elseif ( isset($_GET['oauth_token']) ) {
-			$request = $this->_strip_array($_GET);
-
-			if ( class_exists('TwitterOAuth') && !is_null($this->consumer_key) && !is_null($this->consumer_secret) && !is_null($this->request_token) && !is_null($this->request_token_secret) ) {
-				$oauth_token = $request['oauth_token'];
-				if ( $oauth_token !== $this->options['oauth_token'] ) {
-					$oauth = new TwitterOAuth($this->consumer_key, $this->consumer_secret, $this->request_token, $this->request_token_secret);
-					$token = $oauth->getAccessToken($oauth_token, null);
-					$access_token = $token['oauth_token'];
-					$access_token_secret = $token['oauth_token_secret'];
-					unset($token);
-					unset($oauth);
-					$this->options['pin']  = null;
-					$this->options['oauth_token'] = $this->oauth_token = $oauth_token;
-					$this->options['access_token'] = $access_token;
-					$this->options['access_token_secret'] = $access_token_secret;
-				}
-				$this->request_token = $this->request_token_secret = null;
-			}
 
 			// options update
 			$this->_update_options();
@@ -988,7 +916,7 @@ class SimpleTweet {
 		$out .= "<form method=\"post\" id=\"update_options\" action=\"".$this->admin_action."\">\n";
 		$out .= $this->_make_nonce_field("update_options", "_wpnonce_update_options", true, false);
 
-		$out .= $this->_options_table( $this->options, TRUE );
+		$out .= $this->_options_table( $this->options, true );
 
 		// Add Update Button
 		$out .= "<p style=\"margin-top:1em\"><input type=\"submit\" name=\"options_update\" class=\"button-primary\" value=\"".__('Update Options &raquo;', $this->textdomain_name)."\" class=\"button\" /></p>";
@@ -1019,11 +947,13 @@ class SimpleTweet {
 		}
 	}
 
-	public function user_profile_update( $user_id ) {
+	public function user_profile_update( $user_id, $input = null ) {
 		if ( current_user_can('publish_posts') ) {
+			if (!isset($input))
+				$input = $_POST;
 			list($options, $current_user_options) = $this->_get_options( $user_id );
 			$current_user_options = $this->_init_options( $current_user_options );
-			$current_user_options = $this->_get_post_data( $_POST, $current_user_options );
+			$current_user_options = $this->_get_post_data( $input, $current_user_options );
 			if (function_exists('update_user_meta')) {
 				update_user_meta($user_id, $this->option_name, $current_user_options);
 			} else {
@@ -1032,53 +962,31 @@ class SimpleTweet {
 		}
 	}
 
-	private function _get_post_data( $request, $options = NULL, $is_admin = FALSE ) {
+	private function _get_post_data( $request, $options = NULL, $is_admin = false ) {
 		if ( !is_array($options) )
 			$options = array();
 
 		// strip slashes array
 		$request = $this->_strip_array($request);
 
-		$options['user']       = $request['twitter_usr'];
-		if ( isset($request['twitter_pwd']) && trim($request['twitter_pwd']) !== '' ) {
-			$options['password'] = $request['twitter_pwd'];
-		}
-
-		$twitter_pin  = $options['pin'];
 		$access_token = $options['access_token'];
 		$access_token_secret = $options['access_token_secret'];
-		if ( class_exists('TwitterOAuth') && !is_null($this->consumer_key) && !is_null($this->consumer_secret) && !is_null($this->request_token) && !is_null($this->request_token_secret) ) {
-//			$twitter_pin = $access_token = $access_token_secret = null;
-			$twitter_pin = (
-				isset($request['twitter_pin']) && !empty($request['twitter_pin'])
-				? trim($request['twitter_pin'])
-				: null
-				);
-			if ( !is_null($twitter_pin) && $twitter_pin !== $options['pin'] ) {
-				$oauth = new TwitterOAuth($this->consumer_key, $this->consumer_secret, $this->request_token, $this->request_token_secret);
-				$token = $oauth->getAccessToken(null, $twitter_pin);
-				$access_token = $token['oauth_token'];
-				$access_token_secret = $token['oauth_token_secret'];
-				unset($token);
-				unset($oauth);
-				$options['oauth_token'] = $this->oauth_token = null;
-				$options['access_token'] = $access_token;
-				$options['access_token_secret'] = $access_token_secret;
-			} else {
-				$twitter_pin  = $options['pin'];
-				$access_token = $options['access_token'];
-				$access_token_secret = $options['access_token_secret'];
+		$twitter_pin = 
+			isset($request['twitter_pin']) && !empty($request['twitter_pin'])
+			? trim($request['twitter_pin'])
+			: false;
+		if ( isset($this->consumer_key) && isset($this->consumer_secret) && $twitter_pin ) {
+			// gets the access token
+			if ( $access_tokens = $this->oauth_verifier( $twitter_pin, false ) ){
+				$options['access_token'] = $access_token = $access_tokens[0];
+				$options['access_token_secret'] = $access_token_secret = $access_tokens[1];
 			}
-			$this->request_token = $this->request_token_secret = null;
 		}
 		if ( isset($request['oauth_reset']) && $request['oauth_reset'] == 'on' ) {
-			$options['pin'] = $this->options['pin'] = null;
-			$options['oauth_token'] = $this->oauth_token = null;
 			$options['access_token'] = $this->options['access_token'] = null;
 			$options['access_token_secret'] = $this->options['access_token_secret'] = null;
 			$options['oauth_reset'] = true;
 		} else {
-			$options['pin'] = $this->options['pin'] = $twitter_pin;
 			$options['access_token'] = $this->options['access_token'] = $access_token;
 			$options['access_token_secret'] = $this->options['access_token_secret'] = $access_token_secret;
 			$options['oauth_reset'] = false;
@@ -1143,109 +1051,95 @@ class SimpleTweet {
 		return $options;
 	}
 
-	private function _options_table( $options, $is_admin = FALSE ) {
+	private function _options_table( $options, $is_admin = false ) {
 		$out  = '';
 
 		$out .= "<table class=\"optiontable form-table\" style=\"margin-top:0;\"><tbody>\n";
 
-		if ( class_exists('TwitterOAuth') ) {
-			if ( $is_admin || (!is_null($this->consumer_key) && !is_null($this->consumer_secret)) ) {
-				$out .= '<tr>';
-				$out .= '<th>';
-				$out .= __('Twitter OAuth', $this->textdomain_name);
-				if ( is_null($options['access_token']) || is_null($options['access_token_secret']) ) {
+		if ( $is_admin || (!is_null($this->consumer_key) && !is_null($this->consumer_secret)) ) {
+			$out .= '<tr>';
+			$out .= '<th>';
+			$out .= __('Twitter OAuth', $this->textdomain_name);
+			if ( is_null($options['access_token']) || is_null($options['access_token_secret']) )
 					$out .= '<br/>'.__('<a href="http://wppluginsj.sourceforge.jp/simple-tweet/simple-tweet-oauth-en/" title="WordPress Plugins/JSeries » Simple Tweet OAuth Setting">OAuth Setting</a>', $this->textdomain_name);
-				}
-				$out .= '</th>';
-				$out .= '<td>';
-				$out .= "<table style=\"margin-top:0;\"><tbody>\n";
-				if ( $is_admin ) {
-					$out .= '<tr>';
-					$out .= '<th style="width:120px;padding:0;">'.__('Get Consumer Key', $this->textdomain_name)."</th>";
-					$out .= '<td style="padding:0;"><a href="'.self::TWEET_OAUTH_CLIENTS_URL.'" target="_blank">'.__('Applications Using Twitter', $this->textdomain_name).'</a></td>';
-					$out .= "</tr>\n";
-					$out .= '<tr>';
-					$out .= '<th style="width:120px;padding:0;">'.__('Consumer Key', $this->textdomain_name)."</th>";
-					$out .= '<td style="padding:0;"><input type="text" name="consumer_key" id="consumer_key" size="50" value="'.$this->consumer_key.'" /></td>';
-					$out .= "</tr>\n";
-					$out .= "<tr>";
-					$out .= '<th style="width:120px;padding:0;">'.__('Consumer Secret', $this->textdomain_name)."</th>";
-					$out .= '<td style="padding:0;"><input type="text" name="consumer_secret" id="consumer_secret" size="50" value="'.$this->consumer_secret.'" /></td>';
-					$out .= "</tr>\n";
-					$out .= '<tr>';
-					$out .= '<th style="width:120px;padding:0;">'.__("What's a tweet", $this->textdomain_name)."</th>";
-					$out .= '<td style="padding:0;">'.__('Please set the contents tweet in "<a href="profile.php#simple-tweet">your profile</a>"', $this->textdomain_name).'</a></td>';
-					$out .= "</tr>\n";
+			$out .= '</th>';
+			$out .= '<td>';
+			$out .= "<table style=\"margin-top:0;\"><tbody>\n";
+			if ( $is_admin ) {
+				$out .= '<tr>';
+				$out .= '<th style="width:120px;padding:0;">'.__('Get Consumer Key', $this->textdomain_name)."</th>";
+				$out .= '<td style="padding:0;"><a href="'.self::TWEET_OAUTH_CLIENTS_URL.'" target="_blank">'.__('Applications Using Twitter', $this->textdomain_name).'</a></td>';
+				$out .= "</tr>\n";
+				$out .= '<tr>';
+				$out .= '<th style="width:120px;padding:0;">'.__('Consumer Key', $this->textdomain_name)."</th>";
+				$out .= '<td style="padding:0;"><input type="text" name="consumer_key" id="consumer_key" size="50" value="'.$this->consumer_key.'" /></td>';
+				$out .= "</tr>\n";
+				$out .= "<tr>";
+				$out .= '<th style="width:120px;padding:0;">'.__('Consumer Secret', $this->textdomain_name)."</th>";
+				$out .= '<td style="padding:0;"><input type="text" name="consumer_secret" id="consumer_secret" size="50" value="'.$this->consumer_secret.'" /></td>';
+				$out .= "</tr>\n";
+				$out .= '<tr>';
+				$out .= '<th style="width:120px;padding:0;">'.__("What's a tweet", $this->textdomain_name)."</th>";
+				$out .= '<td style="padding:0;">'.__('Please set the contents tweet in "<a href="profile.php#simple-tweet">your profile</a>"', $this->textdomain_name).'</a></td>';
+				$out .= "</tr>\n";
 
-				} elseif ( !is_null($this->consumer_key) && !is_null($this->consumer_secret) ) {
-					if ($options['oauth_reset'] || is_null($options['access_token']) || is_null($options['access_token_secret'])) {
-						$this->request_token = $this->request_token_secret = null;
-						$oauth = new TwitterOAuth($this->consumer_key, $this->consumer_secret);
-						$token = $oauth->getRequestToken();
-						$this->options['request_token'] = $this->request_token = $token['oauth_token'];
-						$this->options['request_token_secret'] = $this->request_token_secret = $token['oauth_token_secret'];
-						$request_link = $oauth->getAuthorizeURL($this->request_token);
-						$this->_update_options();
-						unset($oauth);
+			} elseif ( isset($this->consumer_key) && isset($this->consumer_secret) ) {
+				if ($options['oauth_reset'] || !isset($options['access_token']) || !isset($options['access_token_secret'])) {
+					// get request link
+					$request_link = '';
+					try {
+						if ($cb = $this->cb_object()) {
+							if ( !($request_link = get_transient($this->twitter_client_name.'-request_link')) ) {
+								$request_link = '<a href="%1$s">';
+								$reply = $cb->oauth_requestToken(array(
+									'oauth_callback' => 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'],
+									));
+								if (!isset($reply->oauth_token)) {
+									$request_link = '<a href="%1$s" target="_blank">';
+									$reply = $cb->oauth_requestToken(array());
+								}
+								$cb->setToken($reply->oauth_token, $reply->oauth_token_secret);
+								$request_link = sprintf($request_link, $cb->oauth_authorize());
+								$expires = 60 * 5;
+								set_transient($this->twitter_client_name.'-request_token', $reply->oauth_token, $expires);
+								set_transient($this->twitter_client_name.'-request_token_secret', $reply->oauth_token_secret, $expires);
+								set_transient($this->twitter_client_name.'-request_link', $request_link, $expires);
+							}
+						}
+						unset($cb);
+					} catch (Exception $e) {
+					}
 
+					if (!empty($request_link)) {
 						$out .= "<tr>";
 						$out .= '<th style="width:120px;padding:0;">'.__('OAuth', $this->textdomain_name)."</th>";
-						$out .= "<td style=\"padding:0;\"><a href=\"{$request_link}\" target=\"_blank\">".__('Click on the link to go to twitter to authorize your account.', $this->textdomain_name).'</a></td>';
-						$out .= "</tr>\n";
-
-						$out .= "<tr>";
-						$out .= '<th style="width:120px;padding:0;">'.__('PIN', $this->textdomain_name)."</th>";
-						$out .= "<td style=\"padding:0;\"><input type=\"text\" name=\"twitter_pin\" id=\"twitter_pin\" size=\"50\" value=\"{$options['pin']}\" /></td>";
-						$out .= "</tr>\n";
-					} else {
-						$out .= "<tr>";
-						$out .= '<td colspan="2" style="padding:0;">';
-						$out .= '<input type="checkbox" name="oauth_reset" id="oauth_reset" value="on" /> ';
-						$out .= __('OAuth reset', $this->textdomain_name);
-						$out .= "</td>";
+						$out .= "<td style=\"padding:0;\">";
+						$out .= $request_link.
+							__('Click on the link to go to twitter to authorize your account.', $this->textdomain_name).'</a>';
+						$out .= '</td>';
 						$out .= "</tr>\n";
 					}
+
+					$out .= "<tr>";
+					$out .= '<th style="width:120px;padding:0;">'.__('PIN', $this->textdomain_name)."</th>";
+					$out .= '<td style="padding:0;">';
+					$out .= '<input type="text" name="twitter_pin" id="twitter_pin" size="50" value="" />';
+					$out .= '</td>';
+					$out .= "</tr>\n";
+
+				} else {
+					$out .= "<tr>";
+					$out .= '<td colspan="2" style="padding:0;">';
+					$out .= '<input type="checkbox" name="oauth_reset" id="oauth_reset" value="on" /> ';
+					$out .= __('OAuth reset', $this->textdomain_name);
+					$out .= "</td>";
+					$out .= "</tr>\n";
 				}
-				$out .= "</tbody></table>\n";
-				$out .= "</td>";
-				$out .= "</tr>\n";
 			}
-
-		} else {
-			$out .= "<tr>";
-			$out .= "<th>";
-			$out .= __('Twitter OAuth', $this->textdomain_name);
-			$out .= "</th>";
-			$out .= "<td>";
-			$out .= __('Twitter OAuth supports PHP5 or later.', $this->textdomain_name);
-			$out .= "</td>";
-			$out .= "</tr>\n";
-		}
-
-/*
-		if ( is_null($this->consumer_key) || is_null($this->consumer_secret) || is_null($options['access_token']) || is_null($options['access_token_secret']) ) {
-			$out .= "<tr>";
-			$out .= '<th>'.__('Twitter ID', $this->textdomain_name)."</th>";
-			$out .= "<td>";
-			$out .= "<table style=\"margin-top:0;\"><tbody>\n";
-			$out .= "<tr>";
-			$out .= '<th style="width:120px;padding:0;">'.__('User Name', $this->textdomain_name)."</th>";
-			$out .= "<td style=\"padding:0;\"><input type=\"text\" name=\"twitter_usr\" id=\"twitter_usr\" size=\"50\" value=\"{$options['user']}\" /></td>";
-			$out .= "</tr>\n";
-			$out .= "<tr>";
-			$out .= '<th style="width:120px;padding:0;">'.__('Password', $this->textdomain_name)."</th>";
-			$out .= "<td style=\"padding:0;\">";
-			$out .= "<input type=\"password\" name=\"twitter_pwd\" id=\"twitter_pwd\" size=\"16\" value=\"\" /><br />\n";
-			$out .= '<span class="description">';
-			$out .= __("If you would like to change the password type a new one. Otherwise leave this blank.");
-			$out .= '</span>';
-			$out .= "</td>";
-			$out .= "</tr>\n";
 			$out .= "</tbody></table>\n";
 			$out .= "</td>";
 			$out .= "</tr>\n";
 		}
-*/
 
 		if ( !$is_admin ) {
 			$out .= "<tr>";
@@ -1381,7 +1275,7 @@ class SimpleTweet {
 	//*****************************************************************************
 	// Get Tweet this Link
 	//*****************************************************************************
-	public function tweet_this_link($inreply_to = FALSE) {
+	public function tweet_this_link($inreply_to = false) {
 		global $post;
 
 		if ( !isset($post) )
@@ -1393,9 +1287,6 @@ class SimpleTweet {
 		list($options, $current_user_options) = $this->_get_options( $post->post_author );
 
 		$status_id = (string) $this->_get_post_meta($post_id, self::TWEET_METAKEY_SID);
-//		if ( $inreply_to && empty($status_id) )
-//			return false;
-
 		if ( $options['shorten'] ) {
 			$tiny = $this->_get_post_meta($post_id, self::TWEET_METAKEY_URL);
 			if ( !empty($tiny) && !is_array($tiny) ) {
@@ -1457,25 +1348,21 @@ class SimpleTweet {
 	// Show admin notice
 	//*****************************************************************************
 	public function admin_notice() {
-		$tweet_result = get_transient(self::MESSAGE_FLAG);
-		$tweet_id = ($tweet_result !== FALSE ? $this->_get_tweet_id($tweet_result) : '');
-		$tweet_text = '';
-
-		if (!empty($tweet_id)) {
-			if ( preg_match('/<text>([^<]*)<\/text>/i', $tweet_result, $match) ) {
-				$tweet_text = $match[1];
+		if ( $tweet_result = get_transient(self::MESSAGE_FLAG) ) {
+			$tweet_id   = $this->_get_tweet_id($tweet_result);
+			$tweet_text = $this->_get_tweet_text($tweet_result);
+			if (isset($tweet_result->user) && isset($tweet_result->user->screen_name)) {
+				$tweet_link = sprintf('https://twitter.com/%1$s/status/%2$s',$tweet_result->user->screen_name,$tweet_id);
+				$tweet_text = sprintf('<a href="%1$s" target="_blank">%2$s</a>', $tweet_link, $tweet_text);
 			}
-			unset($match);
-			$this->_show_message('Simple Tweet: Success! Tweet ID ' . $tweet_id . (!empty($tweet_text) ? '<br />'.$tweet_text : ''));
-		} else {
-			if ( preg_match('/<error>([^<]*)<\/error>/i', $tweet_result, $match) ) {
-				$tweet_text = $match[1];
-			}
-			unset($match);
-			$this->_show_message('Simple Tweet: Error!!! - ' . $tweet_text, true);
+			if (!empty($tweet_id))
+				$this->_show_message('Simple Tweet: Success! Tweet ID ' . $tweet_id . '<br />' . $tweet_text);
+			else if (isset($tweet_result->error))
+				$this->_show_message('Simple Tweet: Error!!! - ' . $tweet_result->error, true);
+			else
+				$this->_show_message('Simple Tweet: Error!!!', true);
+			delete_transient(self::MESSAGE_FLAG);
 		}
-
-		delete_transient(self::MESSAGE_FLAG);
 	}
 
 	private function _show_message($message, $errormsg = false) {
@@ -1488,4 +1375,3 @@ class SimpleTweet {
  * Go Go Go!
  *****************************************************************************/
 $simple_tweet = new SimpleTweet();
-?>

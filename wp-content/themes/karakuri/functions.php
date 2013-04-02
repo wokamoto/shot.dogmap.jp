@@ -252,7 +252,7 @@ function get_entry_thumbnail() {
 	$height = 104;
 	$output = '<div class="thumb">' . "\n";
 	$output .= '<a href="' . get_permalink( $id ) . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'karakuri' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark">' . "\n";
-	if ( has_post_thumbnail( $id ) ) {
+	if ( ($thumbnail = get_the_post_thumbnail( $id, $size )) && !empty($thumbnail) ) {
 		$output .= get_the_post_thumbnail( $id, $size ) . "\n";
 	} else {
 		$output .= '<img src="' . get_template_directory_uri() . '/images/other/no-image.png" alt="' . the_title_attribute( 'echo=0' ) . '" width="' . $width . '" height="' . $height . '">' . "\n";

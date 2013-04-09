@@ -3,7 +3,7 @@ Contributors: niallkennedy
 Tags: twitter, twitter cards, semantic markup
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,7 +26,7 @@ Test your site's Twitter Card display through [Twitter's card preview tool](http
 
 = Why don't you support feature X? =
 
-I wrote this plugin for my own site, [NiallKennedy.com](http://www.niallkennedy.com/ "Niall Kennedy"), added some slight flexibility through filters, and released the plugin on GitHub as [a PHP library](https://github.com/niallkennedy/twitter-cards-php "Twitter Cards generator PHP") with [a WordPress plugin wrapper](https://github.com/niallkennedy/twitter-cards "Twitter Cards WordPress plugin"). I use summary cards for my site's articles. If you would like to add better support for photos or videos exposed to Twitter you can fork my work and optionally send some code in a pull request.
+I wrote this plugin for my own site, [NiallKennedy.com](http://www.niallkennedy.com/ "Niall Kennedy"), added some slight flexibility through filters, and released the plugin on GitHub as [a PHP library](https://github.com/niallkennedy/twitter-cards-php "Twitter Cards generator PHP") with [a WordPress plugin wrapper](https://github.com/niallkennedy/twitter-cards "Twitter Cards WordPress plugin"). I use summary cards for my site's articles. If you would like to add better support for photos, galleries, videos, apps, or products exposed to Twitter you can fork my work and optionally send some code in a pull request.
 
 = How do I add my Twitter account? =
 
@@ -62,6 +62,9 @@ The plugin outputs HTML-style void elements without a trailing slash by default.
 
 == Upgrade Notice ==
 
+= 1.0.5 =
+Allow cards of app, gallery, or product type.
+
 = 1.0.4 =
 Treat post format of image as a Twitter photo card.
 
@@ -75,6 +78,9 @@ Change attribute from value to content to match current Twitter documentation.
 Improved auto-generated description.
 
 == Changelog ==
+
+= 1.0.5 =
+* Update Twitter Cards PHP library to support extending the plugin for new app, gallery, or product Twitter Card types.
 
 = 1.0.4 =
 * Treat post format of "image" as a Twitter photo card.

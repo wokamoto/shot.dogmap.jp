@@ -19,8 +19,7 @@ function satu_content_after_header() { ?>
 	<div class="after-header">
 		<div class="container">
 
-			<?php if ( current_theme_supports( 'breadcrumb-trail' ) ) 
-			breadcrumb_trail( array( 'before' => __( 'You are here:', 'satu' ) ) ); ?>
+			<?php if ( current_theme_supports( 'breadcrumb-trail' ) ) breadcrumb_trail( array( 'before' => __( 'You are here:', 'satu' ) ) ); ?>
 
 		</div><!-- .container -->
 	</div><!-- .after-header -->

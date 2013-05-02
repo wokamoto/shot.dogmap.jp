@@ -21,6 +21,13 @@ do_action( 'satu_entry_before' );
 			do_action( 'satu_entry_open' ); 
 		?>
 
+		<figure class="entry-thumbnail hmedia">
+			<?php if ( current_theme_supports( 'get-the-image' ) )
+				// Function to load post attachments/thumbnails
+				get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'satu-featured', 'image_class' => 'photo' ) ); 
+			?>
+		</figure><!-- .entry-thumbnail .hmedia -->
+
 		<header class="entry-header">
 			<?php
 				// Loads entry-title shortcode
@@ -31,16 +38,33 @@ do_action( 'satu_entry_before' );
 
 		<div class="entry-wrap">
 
-			<div class="entry-summary">
-				<?php the_content(); ?>
-				<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'satu' ), 'after' => '</p>' ) ); ?>
-			</div><!-- .entry-summary -->
+			<?php if ( ! is_singular() ) { ?>
 
-			<?php 
-				// Loads entry-terms shortcode
-				// Please open library/functions/shortcodes.php for more information
-				echo apply_atomic_shortcode( 'entry_meta', '<footer class="entry-meta">' . __( '[entry-published] &middot; [entry-author]', 'satu' ) . '</footer><!-- .entry-meta -->' ); 
-			?>
+				<div class="entry-summary">
+					<?php the_excerpt(); ?>
+					<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'satu' ), 'after' => '</p>' ) ); ?>
+				</div><!-- .entry-summary -->
+
+				<?php 
+					// Loads entry-terms shortcode
+					// Please open library/functions/shortcodes.php for more information
+					echo apply_atomic_shortcode( 'entry_meta', '<footer class="entry-meta">' . __( '[entry-published] &middot; [entry-author]', 'satu' ) . '</footer><!-- .entry-meta -->' ); 
+				?>
+
+			<?php } else { ?>
+
+				<div class="entry-summary">
+					<?php the_content(); ?>
+					<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'satu' ), 'after' => '</p>' ) ); ?>
+				</div><!-- .entry-summary -->
+
+				<?php 
+					// Loads entry-terms shortcode
+					// Please open library/functions/shortcodes.php for more information
+					echo apply_atomic_shortcode( 'entry_meta', '<footer class="entry-meta">' . __( '[entry-published] &middot; [entry-author]', 'satu' ) . '</footer><!-- .entry-meta -->' ); 
+				?>
+
+			<?php } ?>
 
 		</div><!-- .entry-wrap -->
 

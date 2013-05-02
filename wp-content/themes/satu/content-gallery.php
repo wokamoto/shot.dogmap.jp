@@ -30,12 +30,11 @@ do_action( 'satu_entry_before' );
 					'post_type'      => 'attachment',
 					'post_parent'    => $post->ID,
 					'post_mime_type' => 'image',
-					'post_status'    => null,
 					'numberposts'    => -1,
 				);
 
 				$gallery_args = apply_filters( 'satu_gallery_format_args', $defaults );
-				$attachments = get_posts( $gallery_args );
+				$attachments = get_children( $gallery_args );
 
 				if ( $attachments ) : ?>
 

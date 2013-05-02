@@ -58,7 +58,7 @@ function satu_theme_setup() {
 			'default-image' => trailingslashit( THEME_URI ) . 'img/pattern.png',
 		)
 	);
-	add_theme_support( 'post-formats', array( 'aside', 'audio', 'image', 'gallery', 'link', 'quote', 'video' )  );
+	add_theme_support( 'post-formats', array( 'aside', 'audio', 'image', 'gallery', 'link', 'quote', 'video' ) );
 
 	/* Set content width. */
 	hybrid_set_content_width( 630 );
@@ -183,9 +183,7 @@ function satu_site_title() {
  * @since 1.0
  */
 function satu_comments_args( $args ) {
-
 	$args['avatar_size'] = 60;
-
 	return $args;
 }
 ?>

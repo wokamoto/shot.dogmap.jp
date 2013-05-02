@@ -1,3 +1,7 @@
+1.6 - 20/04/2013
+- Use get_children rather than get_posts for the gallery format
+- Post type page now support featured image pros @lkraav 
+
 1.5 - 25/03/2013
 - Remove double <head> tag
 - Add action hook for footer

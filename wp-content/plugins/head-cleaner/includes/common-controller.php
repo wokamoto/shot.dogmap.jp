@@ -27,7 +27,7 @@ class wokController {
 	var $admin_option, $admin_action, $admin_hook;
 	var $note, $error;
 	var $charset;
-	var $wp25, $wp26, $wp27, $wp28, $wp29, $wp30, $wp31, $wp32;
+	var $wp25, $wp26, $wp27, $wp28, $wp29, $wp30, $wp31, $wp32, $wp33, $wp34;
 	var $inline_js;
 
 	var $jquery_js  = 'includes/js/jquery-1.4.2.min.js';
@@ -50,6 +50,8 @@ class wokController {
 		$this->wp30    = version_compare($wp_version, "3.0", ">=");
 		$this->wp31    = version_compare($wp_version, "3.1", ">=");
 		$this->wp32    = version_compare($wp_version, "3.2", ">=");
+		$this->wp33    = version_compare($wp_version, "3.3", ">=");
+		$this->wp34    = version_compare($wp_version, "3.4", ">=");
 
 		$this->setPluginDir($file);
 		$this->loadTextdomain();
@@ -65,10 +67,10 @@ class wokController {
 		$this->admin_hook      = array();
 
 		$this->options         = array();
-		$this->option_name     = ( isset($this->plugin_name) && !empty($this->plugin_name)
-					? $this->plugin_name
-					: $this->plugin_dir )
-					. " Options";
+		$this->option_name     = (
+			isset($this->plugin_name) && !empty($this->plugin_name)
+			? $this->plugin_name
+			: $this->plugin_dir ) . " Options";
 
 		if (!isset($wok_script_manager) && class_exists('wokScriptManager'))
 			$wok_script_manager = new wokScriptManager();

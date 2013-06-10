@@ -22,7 +22,7 @@ get_header();
  		do_action( 'satu_content_before' ); 
  	?>
 
-	<div id="primary" class="site-content has-sidebar">
+	<div id="primary" class="site-content no-sidebar">
 
 		<?php 
 			// Action hook for placing content before opening #content
@@ -80,7 +80,7 @@ get_header();
 			do_action( 'satu_content_close' ); 
 		?>
 
-	</div><!-- #primary .site-content .has-sidebar -->
+	</div><!-- #primary .site-content .no-sidebar -->
 
 	<?php 
  		// Action hook for placing content after closing #primary

@@ -21,13 +21,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<title>
-	<?php 
-		// Document title
-		// Please open library/functions/context.php for more information
-		hybrid_document_title(); 
-	?>
-</title>
+<title><?php hybrid_document_title(); // Document title ?></title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -84,7 +78,7 @@
 			do_action( 'satu_header_after' ); 
 		?>
 		
-		<div id="main">
+		<div id="main" class="site-main">
 
 			<?php 
 				// Action hook for placing content after #main

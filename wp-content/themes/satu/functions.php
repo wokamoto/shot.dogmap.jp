@@ -50,15 +50,32 @@ function satu_theme_setup() {
 	add_theme_support( 'post-stylesheets' );
 
 	/* Add theme support for WordPress features. */
-	add_editor_style();
 	add_theme_support( 'automatic-feed-links' );
+
+	/* Add support for custom backgrounds */
 	add_theme_support( 
 		'custom-background',
 		array(
 			'default-image' => trailingslashit( THEME_URI ) . 'img/pattern.png',
 		)
 	);
-	add_theme_support( 'post-formats', array( 'aside', 'audio', 'image', 'gallery', 'link', 'quote', 'video' ) );
+
+	/* Add post format support. */
+	add_theme_support( 
+		'post-formats',
+		array( 'aside', 'audio', 'image', 'gallery', 'link', 'quote', 'video' ) 
+	);
+	
+	/* Add support for custom headers. */
+	$args = array(
+		'width'         => 200,
+		'height'        => 80,
+		'flex-height'   => true,
+		'flex-width'    => true,		
+		'header-text'   => false,
+		'uploads'       => true,
+	);
+	add_theme_support( 'custom-header', $args );	
 
 	/* Set content width. */
 	hybrid_set_content_width( 630 );
@@ -80,6 +97,19 @@ function satu_theme_setup() {
 
 	/* Filter size of the gravatar on comments. */
 	add_filter( "{$prefix}_list_comments_args", 'satu_comments_args' );
+
+	/* Loads HTML5 Shiv. */
+	add_action( 'wp_head', 'satu_html5_script', 1 );
+
+	/** 
+	 * Fix disqus issue.
+	 *
+	 * @since 1.7
+	 */
+	if( function_exists( 'dsq_comments_template' ) ) :
+		remove_filter( 'comments_template', 'dsq_comments_template' );
+		add_filter( 'comments_template', 'dsq_comments_template', 11 );
+	endif;
 
 }
 
@@ -172,9 +202,20 @@ function satu_remove_recent_comments_style() {
  * @since 1.0
  */
 function satu_site_title() {
-	echo get_avatar( get_option( 'admin_email' ), 100, 'mystery', get_bloginfo( 'name' ) );
+
+	if ( get_header_image() ) {
+		echo '<div class="site-logo">' . "\n";
+			echo '<a href="' . get_home_url() . '" title="' . get_bloginfo( 'name' ) . '" rel="home">' . "\n";
+				echo '<img class="logo" src="' . get_header_image() . '" alt="' . get_bloginfo( 'name' ) . '" />' . "\n";
+			echo '</a>' . "\n";
+		echo '</div>' . "\n";
+	} else {
+		echo get_avatar( get_option( 'admin_email' ), 100, 'mystery', get_bloginfo( 'name' ) );
+	}
+
 	hybrid_site_title();
 	hybrid_site_description();
+
 }
 
 /**
@@ -185,5 +226,18 @@ function satu_site_title() {
 function satu_comments_args( $args ) {
 	$args['avatar_size'] = 60;
 	return $args;
+}
+
+/**
+ * Loads HTML5 Shiv.
+ * 
+ * @since 1.7
+ */
+function satu_html5_script() {
+?>
+<!--[if lt IE 9]>
+<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
+<![endif]-->
+<?php
 }
 ?>

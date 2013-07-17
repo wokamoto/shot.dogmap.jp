@@ -1,3 +1,8 @@
+1.7 - 23/05/2013
+- Fix disqus plugin issue
+- Support custom header to change the avatar in the header
+- Update outdated script
+
 1.6 - 20/04/2013
 - Use get_children rather than get_posts for the gallery format
 - Post type page now support featured image pros @lkraav 

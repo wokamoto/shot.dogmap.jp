@@ -1,8 +1,8 @@
 /*
 Theme Name: Satu
 Theme URI: http://themehybrid.com/themes/satu
-Description: One-column elegant, beautiful and responsive personal WordPress theme. Perfect for personal blog or even photographers to showcase their portfolio.
-Version: 1.7
+Description: One-column beautiful and mobile friendly WordPress theme, good choice for professional blogger and smart photographer. Please open docs/readme.html to read the documentation.
+Version: 1.8
 Author: Satrya
 Author URI:	http://satrya.me
 Tags: light, one-column, flexible-width, custom-background, featured-images, microformats, threaded-comments, translation-ready
@@ -806,6 +806,8 @@ object {
 .site-branding #site-description {
   font-size: 14px;
   font-size: 1.07692rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
   font-weight: 400;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
 }
@@ -1492,4 +1494,10 @@ hr.lightborder {
   /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
+}
+
+.sticky,
+.bypostauthor {
+  background: inherit;
+  color: inherit;
 }

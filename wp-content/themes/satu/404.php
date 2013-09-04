@@ -36,7 +36,7 @@ get_header();
 				do_action( 'satu_entry_before' ); 
 			?>
 
-			<article id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
+			<article <?php hybrid_post_attributes(); ?>>
 
 				<?php 
 					// Action hook for placing content after opening post content

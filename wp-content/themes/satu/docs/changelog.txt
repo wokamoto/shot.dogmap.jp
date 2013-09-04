@@ -1,3 +1,10 @@
+1.8 - 17/08/2013
+- Update Hybrid Core
+- Update post format video & audio
+- Fix wrong font-family in site descriptions
+- Remove automatically add image to the post content when choosing post format image
+- Update documentation
+
 1.7 - 23/05/2013
 - Fix disqus plugin issue
 - Support custom header to change the avatar in the header

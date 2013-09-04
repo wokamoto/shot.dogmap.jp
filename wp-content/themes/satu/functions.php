@@ -22,6 +22,9 @@ add_action( 'after_setup_theme', 'satu_theme_setup' );
 /* Load additional libraries a little later. */
 add_action( 'after_setup_theme', 'satu_load_libraries', 15 );
 
+/* Remove automatically post format image add image to content. */
+add_action( 'wp_loaded', 'satu_remove_image_in_content', 2 );
+
 /**
  * Theme setup function. This function adds support for theme features and defines the default theme
  * actions and filters.
@@ -40,6 +43,7 @@ function satu_theme_setup() {
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 	add_theme_support( 'hybrid-core-styles', array( 'gallery', 'parent', 'style' ) );
 	add_theme_support( 'hybrid-core-scripts' );
+	add_theme_support( 'hybrid-core-media-grabber' );
 
 	/* Add theme support for framework extensions. */
 	add_theme_support( 'loop-pagination' );
@@ -126,6 +130,16 @@ function satu_load_libraries() {
 }
 
 /**
+ * Remove automatically add image to the post content
+ * when choosing post format image.
+ *
+ * @since 1.8
+ */
+function satu_remove_image_in_content() {
+	remove_filter( 'the_content', 'hybrid_image_content' );
+}
+
+/**
  * Enqueue styles & scripts
  *
  * @since 1.0
@@ -190,10 +204,8 @@ function satu_next_comments_link_attributes( $attributes ) {
  * @since 1.0
  */
 function satu_remove_recent_comments_style() {
-
 	global $wp_widget_factory;
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
-
 }
 
 /**

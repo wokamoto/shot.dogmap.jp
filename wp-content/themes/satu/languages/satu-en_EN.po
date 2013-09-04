@@ -1,32 +1,42 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Satu 1.0\n"
-"POT-Creation-Date: 2013-02-01 01:44+0700\n"
-"PO-Revision-Date: 2013-02-01 01:44+0700\n"
+"POT-Creation-Date: 2013-08-17 09:53+0700\n"
+"PO-Revision-Date: 2013-08-17 09:53+0700\n"
 "Last-Translator: M.Satrya <satrya@tokokoo.com>\n"
 "Language-Team: Satrya <satrya@satrya.me>\n"
 "Language: English\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;"
 "_n:1,2;_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:37
-msgid "Oops! That page can&rsquo;t be found."
+#: ../404.php:47
+msgid "Oops! That page can't be found."
 msgstr ""
 
-#: ../404.php:44
+#: ../404.php:54
 msgid ""
 "The following is a list of the latest posts from the blog. Maybe it will "
 "help you find what you're looking for."
 msgstr ""
 
-#: ../comment.php:32
+#: ../attachment-image.php:64 ../content-aside.php:30 ../content-aside.php:55
+#: ../content-audio.php:44 ../content-audio.php:69 ../content-gallery.php:67
+#: ../content-gallery.php:92 ../content-image.php:45 ../content-image.php:58
+#: ../content-link.php:38 ../content-link.php:51 ../content-page.php:45
+#: ../content-page.php:58 ../content-quote.php:30 ../content-quote.php:55
+#: ../content-video.php:43 ../content-video.php:68 ../content.php:38
+#: ../content.php:51
+msgid "Pages:"
+msgstr ""
+
+#: ../comment.php:38
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -47,34 +57,27 @@ msgstr ""
 msgid "Page %1$s of %2$s"
 msgstr ""
 
-#: ../comments.php:50
+#: ../comments.php:56
 #, php-format
 msgid ""
 "Comments are closed, but <a href=\"%s\" title=\"Trackback URL for this post"
 "\">trackbacks</a> and pingbacks are open."
 msgstr ""
 
-#: ../comments.php:56
+#: ../comments.php:62
 msgid "Comments are closed."
 msgstr ""
 
-#: ../content-aside.php:30 ../content-aside.php:55 ../content-gallery.php:68
-#: ../content-gallery.php:93 ../content-image.php:45 ../content-image.php:58
-#: ../content-link.php:38 ../content-link.php:51 ../content-page.php:36
-#: ../content-quote.php:30 ../content-quote.php:55 ../content-video.php:44
-#: ../content-video.php:69 ../content.php:38 ../content.php:51
-msgid "Pages:"
-msgstr ""
-
-#: ../content-aside.php:61 ../content-gallery.php:99 ../content-image.php:64
-#: ../content-link.php:57 ../content-quote.php:61 ../content-video.php:75
+#: ../content-aside.php:61 ../content-audio.php:75 ../content-gallery.php:98
+#: ../content-image.php:64 ../content-link.php:57 ../content-quote.php:61
+#: ../content-video.php:74
 msgid ""
 "[post-format-link] &middot; [entry-published] &middot; [entry-author] "
 "&middot; [entry-terms taxonomy=\"category\" before=\"Posted in \"] &middot; "
 "[entry-terms before=\"Tagged \"]"
 msgstr ""
 
-#: ../content-page.php:42
+#: ../content-page.php:51 ../content-page.php:64
 msgid "[entry-published] &middot; [entry-author]"
 msgstr ""
 
@@ -84,26 +87,22 @@ msgid ""
 "\"category\" before=\"Posted in \"] &middot; [entry-terms before=\"Tagged \"]"
 msgstr ""
 
-#: ../footer.php:40
+#: ../footer.php:35
 msgid ""
 "Copyright &copy; [the-year] [site-link]. Powered by [wp-link] and [theme-"
 "link]"
 msgstr ""
 
-#: ../functions.php:125
+#: ../functions.php:176
 msgid "Small Thumbnail"
 msgstr ""
 
-#: ../functions.php:126
+#: ../functions.php:177
 msgid "Featured"
 msgstr ""
 
-#: ../functions.php:168
-msgid "Copyright &#169; [the-year] [site-link]"
-msgstr ""
-
-#: ../functions.php:195
-msgid "You are here:"
+#: ../functions.php:178
+msgid "Attachment"
 msgstr ""
 
 #: ../loop-meta.php:85
@@ -121,7 +120,8 @@ msgstr ""
 
 #: ../loop-meta.php:122 ../library/classes/widget-archives.php:44
 #: ../library/classes/widget-archives.php:142
-#: ../library/functions/context.php:452
+#: ../library/extensions/breadcrumb-trail.php:180
+#: ../library/functions/context.php:576
 msgid "Archives"
 msgstr ""
 
@@ -145,26 +145,25 @@ msgstr ""
 msgid "Next &rarr;"
 msgstr ""
 
-#: ../no-results.php:18
+#: ../no-results.php:26
 msgid "Nothing Found!"
 msgstr ""
 
-#: ../no-results.php:27
+#: ../no-results.php:35
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: ../no-results.php:31
+#: ../no-results.php:39
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: ../no-results.php:37
+#: ../no-results.php:45
 msgid ""
-"It seems we can&rsquo;t find what you're looking for. Perhaps searching can "
-"help."
+"It seems we can't find what you're looking for. Perhaps searching can help."
 msgstr ""
 
 #: ../searchform.php:14
@@ -176,17 +175,8 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: ../inc/theme-functions.php:18
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: ../inc/theme-functions.php:87
-msgid "About the author"
-msgstr ""
-
-#: ../library/admin/admin.php:37 ../library/admin/admin.php:38
-#: ../library/admin/theme-settings.php:172
-msgid "Customize"
+#: ../inc/templates.php:27
+msgid "You are here:"
 msgstr ""
 
 #: ../library/admin/meta-box-post-seo.php:39
@@ -205,12 +195,8 @@ msgstr ""
 msgid "Meta Keywords:"
 msgstr ""
 
-#: ../library/admin/meta-box-post-template.php:38
+#: ../library/admin/meta-box-post-template.php:45
 msgid "Template"
-msgstr ""
-
-#: ../library/admin/meta-box-post-template.php:89
-msgid "No templates exist for this post type."
 msgstr ""
 
 #: ../library/admin/meta-box-theme-about.php:31
@@ -256,15 +242,19 @@ msgstr ""
 msgid "Theme Settings"
 msgstr ""
 
-#: ../library/admin/theme-settings.php:198
+#: ../library/admin/theme-settings.php:172
+msgid "Customize"
+msgstr ""
+
+#: ../library/admin/theme-settings.php:205
 msgid "Update Settings"
 msgstr ""
 
-#: ../library/admin/theme-settings.php:255
+#: ../library/admin/theme-settings.php:262
 msgid "Documentation"
 msgstr ""
 
-#: ../library/admin/theme-settings.php:259
+#: ../library/admin/theme-settings.php:266
 msgid "Support"
 msgstr ""
 
@@ -693,12 +683,12 @@ msgid "View"
 msgstr ""
 
 #: ../library/classes/widget-tags.php:177
-#: ../library/extensions/breadcrumb-trail.php:540
-#: ../library/extensions/breadcrumb-trail.php:573
-#: ../library/extensions/breadcrumb-trail.php:588
-#: ../library/extensions/breadcrumb-trail.php:616
-#: ../library/functions/shortcodes.php:204
-#: ../library/functions/shortcodes.php:448
+#: ../library/extensions/breadcrumb-trail.php:1122
+#: ../library/extensions/breadcrumb-trail.php:1158
+#: ../library/extensions/breadcrumb-trail.php:1175
+#: ../library/extensions/breadcrumb-trail.php:1206
+#: ../library/functions/shortcodes.php:205
+#: ../library/functions/shortcodes.php:527
 msgid "Edit"
 msgstr ""
 
@@ -710,103 +700,80 @@ msgstr ""
 msgid "Pad counts?"
 msgstr ""
 
-#: ../library/extensions/breadcrumb-trail.php:44
+#: ../library/extensions/breadcrumb-trail.php:175
 msgid "Browse:"
 msgstr ""
 
-#: ../library/extensions/breadcrumb-trail.php:47
+#: ../library/extensions/breadcrumb-trail.php:176
 msgid "Home"
 msgstr ""
 
-#: ../library/extensions/breadcrumb-trail.php:424
-#: ../library/functions/context.php:429
-msgid "g:i a"
-msgstr ""
-
-#: ../library/extensions/breadcrumb-trail.php:427
+#: ../library/extensions/breadcrumb-trail.php:177
+#: ../library/functions/context.php:582
 #, php-format
-msgid "Minute %1$s"
+msgid "Search results for \"%s\""
 msgstr ""
 
-#: ../library/extensions/breadcrumb-trail.php:427
-#: ../library/functions/context.php:432
-msgid "i"
-msgstr ""
-
-#: ../library/extensions/breadcrumb-trail.php:430
-#: ../library/functions/context.php:435
-msgid "g a"
-msgstr ""
-
-#: ../library/extensions/breadcrumb-trail.php:441
-#: ../library/extensions/breadcrumb-trail.php:451
-#: ../library/extensions/breadcrumb-trail.php:460
-#: ../library/extensions/breadcrumb-trail.php:471
-#: ../library/extensions/breadcrumb-trail.php:473
-#: ../library/extensions/breadcrumb-trail.php:672
-#: ../library/functions/context.php:441 ../library/functions/context.php:447
-#: ../library/functions/core-seo.php:94 ../library/functions/shortcodes.php:70
-msgid "Y"
-msgstr ""
-
-#: ../library/extensions/breadcrumb-trail.php:442
-#: ../library/extensions/breadcrumb-trail.php:463
-#: ../library/extensions/breadcrumb-trail.php:465
-#: ../library/extensions/breadcrumb-trail.php:676
-msgid "F"
-msgstr ""
-
-#: ../library/extensions/breadcrumb-trail.php:445
-#: ../library/extensions/breadcrumb-trail.php:447
-#: ../library/extensions/breadcrumb-trail.php:680
-msgid "d"
-msgstr ""
-
-#: ../library/extensions/breadcrumb-trail.php:454
-#: ../library/extensions/breadcrumb-trail.php:456
-#, php-format
-msgid "Week %1$s"
-msgstr ""
-
-#: ../library/extensions/breadcrumb-trail.php:454
-#: ../library/extensions/breadcrumb-trail.php:456
-#: ../library/functions/context.php:441
-msgid "W"
-msgstr ""
-
-#: ../library/extensions/breadcrumb-trail.php:482
-#: ../library/extensions/breadcrumb-trail.php:484
-#: ../library/functions/context.php:458
-#, php-format
-msgid "Search results for &quot;%1$s&quot;"
-msgstr ""
-
-#: ../library/extensions/breadcrumb-trail.php:489
-#: ../library/functions/context.php:462
+#: ../library/extensions/breadcrumb-trail.php:178
+#: ../library/functions/context.php:586
 msgid "404 Not Found"
 msgstr ""
 
-#: ../library/extensions/breadcrumb-trail.php:494
-#: ../library/extensions/breadcrumb-trail.php:496
+#: ../library/extensions/breadcrumb-trail.php:179
 #, php-format
 msgid "Page %d"
 msgstr ""
 
-#: ../library/extensions/breadcrumb-trail.php:565
-msgid "Split"
+#: ../library/extensions/breadcrumb-trail.php:181
+#: ../library/functions/context.php:553
+msgid "g:i a"
 msgstr ""
 
-#: ../library/extensions/breadcrumb-trail.php:569
-msgid "Merge"
+#: ../library/extensions/breadcrumb-trail.php:182
+#, php-format
+msgid "Minute %d"
 msgstr ""
 
-#: ../library/extensions/breadcrumb-trail.php:676
+#: ../library/extensions/breadcrumb-trail.php:183
+#: ../library/functions/context.php:559
+msgid "g a"
+msgstr ""
+
+#: ../library/extensions/breadcrumb-trail.php:184
+msgid "d"
+msgstr ""
+
+#: ../library/extensions/breadcrumb-trail.php:185
+#, php-format
+msgid "Week %d"
+msgstr ""
+
+#: ../library/extensions/breadcrumb-trail.php:186
+msgid "F"
+msgstr ""
+
+#: ../library/extensions/breadcrumb-trail.php:187
+#: ../library/extensions/breadcrumb-trail.php:1027
+#: ../library/functions/context.php:565 ../library/functions/context.php:571
+#: ../library/functions/core-seo.php:94 ../library/functions/shortcodes.php:70
+msgid "Y"
+msgstr ""
+
+#: ../library/extensions/breadcrumb-trail.php:1031
 #: ../library/functions/core-seo.php:90
 msgid "F Y"
 msgstr ""
 
-#: ../library/extensions/breadcrumb-trail.php:680
+#: ../library/extensions/breadcrumb-trail.php:1035
 msgid "F j, Y"
+msgstr ""
+
+#: ../library/extensions/breadcrumb-trail.php:1150
+msgid "Split"
+msgstr ""
+
+#: ../library/extensions/breadcrumb-trail.php:1154
+msgid "Merge"
 msgstr ""
 
 #: ../library/extensions/custom-field-series.php:86
@@ -817,44 +784,16 @@ msgstr ""
 msgid "Series"
 msgstr ""
 
-#: ../library/extensions/post-format-tools.php:96
-msgid "Asides"
+#: ../library/extensions/featured-header.php:202
+msgid "Featured Header"
 msgstr ""
 
-#: ../library/extensions/post-format-tools.php:97
-msgid "Audio"
-msgstr ""
-
-#: ../library/extensions/post-format-tools.php:98
-msgid "Chats"
-msgstr ""
-
-#: ../library/extensions/post-format-tools.php:99
-msgid "Images"
-msgstr ""
-
-#: ../library/extensions/post-format-tools.php:100
-msgid "Galleries"
-msgstr ""
-
-#: ../library/extensions/post-format-tools.php:101
-msgid "Links"
-msgstr ""
-
-#: ../library/extensions/post-format-tools.php:102
-msgid "Quotes"
-msgstr ""
-
-#: ../library/extensions/post-format-tools.php:103
-msgid "Status Updates"
-msgstr ""
-
-#: ../library/extensions/post-format-tools.php:104
-msgid "Videos"
-msgstr ""
-
-#: ../library/extensions/post-stylesheets.php:279
+#: ../library/extensions/post-stylesheets.php:286
 msgid "Stylesheet"
+msgstr ""
+
+#: ../library/extensions/theme-fonts.php:401
+msgid "Fonts"
 msgstr ""
 
 #: ../library/extensions/theme-layouts.php:337
@@ -885,17 +824,17 @@ msgstr ""
 msgid "Three Columns, Center"
 msgstr ""
 
-#: ../library/extensions/theme-layouts.php:421
-#: ../library/extensions/theme-layouts.php:531
-#: ../library/extensions/theme-layouts.php:616
+#: ../library/extensions/theme-layouts.php:428
+#: ../library/extensions/theme-layouts.php:538
+#: ../library/extensions/theme-layouts.php:623
 msgid "Layout"
 msgstr ""
 
-#: ../library/extensions/theme-layouts.php:447
+#: ../library/extensions/theme-layouts.php:454
 msgid "Layout is a theme-specific structure for the single view of the post."
 msgstr ""
 
-#: ../library/extensions/theme-layouts.php:649
+#: ../library/extensions/theme-layouts.php:656
 msgid "Global Layout"
 msgstr ""
 
@@ -948,28 +887,36 @@ msgstr ""
 msgid "Post Comment"
 msgstr ""
 
-#: ../library/functions/context.php:429 ../library/functions/context.php:435
-#: ../library/functions/context.php:438 ../library/functions/context.php:444
-#: ../library/functions/context.php:447
+#: ../library/functions/context.php:553 ../library/functions/context.php:559
+#: ../library/functions/context.php:562 ../library/functions/context.php:568
+#: ../library/functions/context.php:571
 #, php-format
-msgid "Archive for %1$s"
+msgid "Archive for %s"
 msgstr ""
 
-#: ../library/functions/context.php:432
+#: ../library/functions/context.php:556
 #, php-format
-msgid "Archive for minute %1$s"
+msgid "Archive for minute %s"
 msgstr ""
 
-#: ../library/functions/context.php:438
+#: ../library/functions/context.php:556
+msgid "i"
+msgstr ""
+
+#: ../library/functions/context.php:562
 msgid "F jS, Y"
 msgstr ""
 
-#: ../library/functions/context.php:441
+#: ../library/functions/context.php:565
 #, php-format
-msgid "Archive for week %1$s of %2$s"
+msgid "Archive for week %s of %s"
 msgstr ""
 
-#: ../library/functions/context.php:466
+#: ../library/functions/context.php:565
+msgid "W"
+msgstr ""
+
+#: ../library/functions/context.php:590
 #, php-format
 msgid "%1$s Page %2$s"
 msgstr ""
@@ -980,8 +927,9 @@ msgid "Copyright (c) %1$s"
 msgstr ""
 
 #: ../library/functions/core-seo.php:116
-#: ../library/functions/shortcodes.php:218
-#: ../library/functions/shortcodes.php:378
+#: ../library/functions/shortcodes.php:237
+#: ../library/functions/shortcodes.php:451
+#: ../library/functions/shortcodes.php:455
 msgid "l, F jS, Y, g:i a"
 msgstr ""
 
@@ -989,7 +937,7 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: ../library/functions/deprecated.php:587
+#: ../library/functions/deprecated.php:684
 #, php-format
 msgid ""
 "<code>%1$s</code> &mdash; This function has been removed or replaced by "
@@ -1011,15 +959,51 @@ msgctxt "nav menu location"
 msgid "Subsidiary"
 msgstr ""
 
-#: ../library/functions/settings.php:76 ../library/functions/settings.php:80
+#: ../library/functions/post-formats.php:111
+msgid "Asides"
+msgstr ""
+
+#: ../library/functions/post-formats.php:112
+msgid "Audio"
+msgstr ""
+
+#: ../library/functions/post-formats.php:113
+msgid "Chats"
+msgstr ""
+
+#: ../library/functions/post-formats.php:114
+msgid "Images"
+msgstr ""
+
+#: ../library/functions/post-formats.php:115
+msgid "Galleries"
+msgstr ""
+
+#: ../library/functions/post-formats.php:116
+msgid "Links"
+msgstr ""
+
+#: ../library/functions/post-formats.php:117
+msgid "Quotes"
+msgstr ""
+
+#: ../library/functions/post-formats.php:118
+msgid "Status Updates"
+msgstr ""
+
+#: ../library/functions/post-formats.php:119
+msgid "Videos"
+msgstr ""
+
+#: ../library/functions/settings.php:83 ../library/functions/settings.php:87
 msgid "Copyright &#169; [the-year] [site-link]."
 msgstr ""
 
-#: ../library/functions/settings.php:76
+#: ../library/functions/settings.php:83
 msgid "Powered by [wp-link], [theme-link], and [child-link]."
 msgstr ""
 
-#: ../library/functions/settings.php:80
+#: ../library/functions/settings.php:87
 msgid "Powered by [wp-link] and [theme-link]."
 msgstr ""
 
@@ -1049,61 +1033,57 @@ msgstr ""
 msgid "This page loaded in %1$s seconds with %2$s database queries."
 msgstr ""
 
-#: ../library/functions/shortcodes.php:204
-#: ../library/functions/shortcodes.php:448
+#: ../library/functions/shortcodes.php:205
+#: ../library/functions/shortcodes.php:527
 #, php-format
 msgid "Edit %1$s"
 msgstr ""
 
-#: ../library/functions/shortcodes.php:234
+#: ../library/functions/shortcodes.php:257
 msgid "Leave a response"
 msgstr ""
 
-#: ../library/functions/shortcodes.php:234
+#: ../library/functions/shortcodes.php:258
 #, php-format
 msgid "%1$s Response"
 msgstr ""
 
-#: ../library/functions/shortcodes.php:234
+#: ../library/functions/shortcodes.php:259
 #, php-format
 msgid "%1$s Responses"
 msgstr ""
 
-#: ../library/functions/shortcodes.php:241
-#: ../library/functions/shortcodes.php:243
-#: ../library/functions/shortcodes.php:245
+#: ../library/functions/shortcodes.php:274
+#: ../library/functions/shortcodes.php:276
+#: ../library/functions/shortcodes.php:278
 #, php-format
 msgid "Comment on %1$s"
 msgstr ""
 
-#: ../library/functions/shortcodes.php:310
-msgid "(Untitled)"
-msgstr ""
-
-#: ../library/functions/shortcodes.php:326
+#: ../library/functions/shortcodes.php:385
 msgid "Shortlink"
 msgstr ""
 
-#: ../library/functions/shortcodes.php:350
-#: ../library/functions/shortcodes.php:427
+#: ../library/functions/shortcodes.php:410
+#: ../library/functions/shortcodes.php:506
 msgid "Permalink"
 msgstr ""
 
-#: ../library/functions/shortcodes.php:378
+#: ../library/functions/shortcodes.php:455
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../library/functions/shortcodes.php:427
+#: ../library/functions/shortcodes.php:506
 #, php-format
 msgid "Permalink to comment %1$s"
 msgstr ""
 
-#: ../library/functions/shortcodes.php:467
+#: ../library/functions/shortcodes.php:546
 msgid "Reply"
 msgstr ""
 
-#: ../library/functions/shortcodes.php:468
+#: ../library/functions/shortcodes.php:547
 msgid "Log in to reply."
 msgstr ""
 
@@ -1172,4 +1152,8 @@ msgstr ""
 msgid ""
 "Loaded on singular post (page, attachment, etc.) views before the comments "
 "area."
+msgstr ""
+
+#: ../library/functions/utility.php:197
+msgid "(Untitled)"
 msgstr ""

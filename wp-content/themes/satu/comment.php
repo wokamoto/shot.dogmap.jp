@@ -15,7 +15,7 @@
 	global $post, $comment;
 ?>
 
-	<li id="comment-<?php comment_ID(); ?>" class="<?php hybrid_comment_class(); ?>">
+	<li <?php hybrid_comment_attributes(); ?>>
 
 		<?php 
 			// Action hook for placing content before opening .comment-wrap
@@ -31,7 +31,7 @@
 
 			<?php echo hybrid_avatar(); ?>
 
-			<?php echo apply_atomic_shortcode( 'comment_meta', '<div class="comment-meta">[comment-author] [comment-published before="&middot; "] [comment-permalink before="&middot; "] [comment-reply-link before="&middot; "] [comment-edit-link before="&middot; "]</div>' ); ?>
+			<?php echo apply_atomic_shortcode( 'comment_meta', '<div class="comment-meta">[comment-author] [comment-published] [comment-permalink before="&middot; "] [comment-reply-link before="&middot; "] [comment-edit-link before="&middot; "]</div>' ); ?>
 
 			<div class="comment-content comment-text">
 				<?php if ( '0' == $comment->comment_approved ) : ?>

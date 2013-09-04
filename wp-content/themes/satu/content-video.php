@@ -14,20 +14,19 @@
 do_action( 'satu_entry_before' ); 
 ?>
 
-	<article id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
+	<article <?php hybrid_post_attributes(); ?>>
 
 		<?php 
 			// Action hook for placing content after opening post content
 			do_action( 'satu_entry_open' ); 
 		?>
 
-		<?php if ( ! is_singular() ) { ?>
+		<?php 
+			// Display embedded video from the post content
+			echo hybrid_media_grabber( array( 'type' => 'video', 'split_media' => true ) );
+		?>
 
-			<?php 
-				// Display embedded video from the post content
-				// Please open library/extensions/post-format-tools.php for more information
-				echo post_format_tools_get_video(); 
-			?>
+		<?php if ( ! is_singular() ) { ?>
 
 			<header class="entry-header">
 				<?php

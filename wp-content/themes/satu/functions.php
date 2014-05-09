@@ -5,25 +5,25 @@
  * Contains all of the Theme's setup functions, custom functions,
  * custom hooks and Theme settings.
  * 
- * @package satu
- * @author	Satrya
- * @license	license.txt
- * @since 	1.0
- *
+ * @since      1.0
+ * @author     Satrya <satrya@satrya.me>
+ * @copyright  Copyright (c) 2013 - 2014, Satrya
+ * @link       http://satrya.me/wordpress-themes/satu/
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
  
 /* Load the core theme framework. */
 require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
 new Hybrid();
 
+/* Load custom header file. */
+require_once( trailingslashit( get_template_directory() ) . 'inc/custom-header.php' );
+
 /* Do theme setup on the 'after_setup_theme' hook. */
 add_action( 'after_setup_theme', 'satu_theme_setup' );
 
 /* Load additional libraries a little later. */
 add_action( 'after_setup_theme', 'satu_load_libraries', 15 );
-
-/* Remove automatically post format image add image to content. */
-add_action( 'wp_loaded', 'satu_remove_image_in_content', 2 );
 
 /**
  * Theme setup function. This function adds support for theme features and defines the default theme
@@ -37,30 +37,46 @@ function satu_theme_setup() {
 	$prefix = hybrid_get_prefix();
 
 	/* Add theme support for core framework features. */
-	add_theme_support( 'hybrid-core-sidebars', array( 'subsidiary' ) );
 	add_theme_support( 'hybrid-core-widgets' );
 	add_theme_support( 'hybrid-core-shortcodes' );
 	add_theme_support( 'hybrid-core-template-hierarchy' );
-	add_theme_support( 'hybrid-core-styles', array( 'gallery', 'parent', 'style' ) );
 	add_theme_support( 'hybrid-core-scripts' );
 	add_theme_support( 'hybrid-core-media-grabber' );
+	add_theme_support( 
+		'hybrid-core-menus', 
+		array( 'primary' ) 
+	);
+	add_theme_support(
+		'hybrid-core-sidebars',
+		array( 'subsidiary' )
+	);
+	add_theme_support(
+		'hybrid-core-styles',
+		array( 'gallery', 'parent', 'style' )
+	);
+	add_theme_support(
+		'hybrid-core-theme-settings',
+		array( 'footer' )
+	);
 
 	/* Add theme support for framework extensions. */
 	add_theme_support( 'loop-pagination' );
 	add_theme_support( 'get-the-image' );
 	add_theme_support( 'breadcrumb-trail' );
-	add_theme_support( 'cleaner-gallery' );
 	add_theme_support( 'cleaner-caption' );
 	add_theme_support( 'post-stylesheets' );
 
 	/* Add theme support for WordPress features. */
 	add_theme_support( 'automatic-feed-links' );
 
+	/* Editor styles. */
+	add_editor_style( 'editor-style.css' );
+
 	/* Add support for custom backgrounds */
 	add_theme_support( 
 		'custom-background',
 		array(
-			'default-image' => trailingslashit( THEME_URI ) . 'img/pattern.png',
+			'default-color' => 'faf9f8',
 		)
 	);
 
@@ -69,41 +85,14 @@ function satu_theme_setup() {
 		'post-formats',
 		array( 'aside', 'audio', 'image', 'gallery', 'link', 'quote', 'video' ) 
 	);
-	
-	/* Add support for custom headers. */
-	$args = array(
-		'width'         => 200,
-		'height'        => 80,
-		'flex-height'   => true,
-		'flex-width'    => true,		
-		'header-text'   => false,
-		'uploads'       => true,
-	);
-	add_theme_support( 'custom-header', $args );	
 
 	/* Set content width. */
 	hybrid_set_content_width( 630 );
-
-	/* Enqueue styles & scripts. */
-	add_action( 'wp_enqueue_scripts', 'satu_enqueue_scripts' );
 
 	/* Add custom image sizes. */
 	add_action( 'init', 'satu_add_image_sizes' );
 	/* Add custom image sizes custom name. */
 	add_filter( 'image_size_names_choose', 'satu_custom_name_image_sizes' );
-
-	/* Add classes to the comments pagination. */
-	add_filter( 'previous_comments_link_attributes', 'satu_previous_comments_link_attributes' );
-	add_filter( 'next_comments_link_attributes', 'satu_next_comments_link_attributes' );
-
-	/* Removes default styles set by WordPress recent comments widget. */
-	add_action( 'widgets_init', 'satu_remove_recent_comments_style' );
-
-	/* Filter size of the gravatar on comments. */
-	add_filter( "{$prefix}_list_comments_args", 'satu_comments_args' );
-
-	/* Loads HTML5 Shiv. */
-	add_action( 'wp_head', 'satu_html5_script', 1 );
 
 	/** 
 	 * Fix disqus issue.
@@ -123,36 +112,21 @@ function satu_theme_setup() {
  * @since 1.5
  */
 function satu_load_libraries() {
+
+	/* Get action/filter hook prefix. */
+	$prefix = hybrid_get_prefix();
+
 	/* Loads additional functions file. */
 	require_once( trailingslashit( THEME_DIR ) . 'inc/theme-functions.php' );
+
 	/* Loads custom template tags. */
 	require_once( trailingslashit( THEME_DIR ) . 'inc/templates.php' );
-}
 
-/**
- * Remove automatically add image to the post content
- * when choosing post format image.
- *
- * @since 1.8
- */
-function satu_remove_image_in_content() {
-	remove_filter( 'the_content', 'hybrid_image_content' );
-}
+	/* Loads enqueue scripts for theme usage. */
+	require_once( trailingslashit( THEME_DIR ) . 'inc/enqueue.php' );
 
-/**
- * Enqueue styles & scripts
- *
- * @since 1.0
- */
-function satu_enqueue_scripts() {
-
-	wp_enqueue_style( 'satu-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700|Roboto+Condensed:400,700|Volkhov', '', '1.0', 'all' );
-
-	wp_enqueue_script( 'jquery' );
-	
-	wp_enqueue_script( 'satu-plugins', trailingslashit( THEME_URI ) . 'js/plugins.js', array( 'jquery' ), '1.0', true );
-	
-	wp_enqueue_script( 'satu-methods', trailingslashit( THEME_URI ) . 'js/methods.js', array( 'jquery' ), '1.0', true );
+	/* Loads customizer functions. */
+	require_once( trailingslashit( THEME_DIR ) . 'inc/customize.php' );
 
 }
 
@@ -162,9 +136,9 @@ function satu_enqueue_scripts() {
  * @since 1.0
  */
 function satu_add_image_sizes() {
-	add_image_size( 'satu-small-thumb', 45, 45, true );
-	add_image_size( 'satu-featured', 690, 280, true );
-	add_image_size( 'satu-attachment', 690, 500, true );
+	add_image_size( 'satu-small-thumb', 45, 45  , true );
+	add_image_size( 'satu-featured'   , 690, 280, true );
+	add_image_size( 'satu-attachment' , 690, 500, true );
 }
 
 /**
@@ -174,38 +148,10 @@ function satu_add_image_sizes() {
  */
 function satu_custom_name_image_sizes( $sizes ) {
     $sizes['satu-small-thumb'] = __( 'Small Thumbnail', 'satu' );
-    $sizes['satu-featured'] = __( 'Featured', 'satu' );
-    $sizes['satu-attachment'] = __( 'Attachment', 'satu' );
+    $sizes['satu-featured']    = __( 'Featured'       , 'satu' );
+    $sizes['satu-attachment']  = __( 'Attachment'     , 'satu' );
  
     return $sizes;
-}
-
-/**
- * Adds 'class="prev" to the previous comments link.
- *
- * @since 1.0
- */
-function satu_previous_comments_link_attributes( $attributes ) {
-	return $attributes . ' class="prev"';
-}
-
-/**
- * Adds 'class="next" to the next comments link.
- *
- * @since 1.0
- */
-function satu_next_comments_link_attributes( $attributes ) {
-	return $attributes . ' class="next"';
-}
-
-/**
- * Removes default styles set by WordPress recent comments widget.
- *
- * @since 1.0
- */
-function satu_remove_recent_comments_style() {
-	global $wp_widget_factory;
-	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 }
 
 /**
@@ -215,41 +161,129 @@ function satu_remove_recent_comments_style() {
  */
 function satu_site_title() {
 
+	$avatar = get_theme_mod( 'satu_show_avatar', true );
+
 	if ( get_header_image() ) {
 		echo '<div class="site-logo">' . "\n";
-			echo '<a href="' . get_home_url() . '" title="' . get_bloginfo( 'name' ) . '" rel="home">' . "\n";
-				echo '<img class="logo" src="' . get_header_image() . '" alt="' . get_bloginfo( 'name' ) . '" />' . "\n";
+			echo '<a href="' . esc_url( get_home_url() ) . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home">' . "\n";
+				echo '<img class="logo" src="' . esc_url( get_header_image() ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" />' . "\n";
 			echo '</a>' . "\n";
 		echo '</div>' . "\n";
-	} else {
-		echo get_avatar( get_option( 'admin_email' ), 100, 'mystery', get_bloginfo( 'name' ) );
+	} elseif ( $avatar ) {
+		echo get_avatar( is_email( get_option( 'admin_email' ) ), 100, 'mystery', esc_attr( get_bloginfo( 'name' ) ) );
 	}
 
-	hybrid_site_title();
-	hybrid_site_description();
+	if ( display_header_text() ) {
+		hybrid_site_title();
+		hybrid_site_description();
+	}
 
 }
 
 /**
- * Filter size of the gravatar on comments.
- * 
- * @since 1.0
+ * Return the post URL.
+ *
+ * @uses get_url_in_content() to get the URL in the post meta (if it exists) or
+ * the first link found in the post content.
+ *
+ * Falls back to the post permalink if no URL is found in the post.
+ *
+ * @since     2.1
+ * @copyright Twenty Thirteen
  */
-function satu_comments_args( $args ) {
-	$args['avatar_size'] = 60;
-	return $args;
+function satu_get_link_url() {
+	$content = get_the_content();
+	$has_url = get_url_in_content( $content );
+
+	return ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
 }
 
 /**
- * Loads HTML5 Shiv.
+ * Get the [gallery] shortcode from the post content and display it on index page. It require
+ * gallery ids [gallery ids=1,2,3,4] to display it as thumbnail slideshow. If no ids exist it
+ * just display it as standard [gallery] markup.
+ *
+ * If no [gallery] shortcode found in the post content, get the attached images to the post and 
+ * display it as slideshow.
  * 
- * @since 1.7
+ * @since  2.1
+ * @access public
+ * @uses   get_post_gallery() to get the gallery in the post content.
+ * @uses   wp_get_attachment_image() to get the HTML image.
+ * @uses   get_children() to get the attached images if no [gallery] found in the post content.
+ * @return string
  */
-function satu_html5_script() {
-?>
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-<![endif]-->
-<?php
+function satu_get_format_gallery() {
+	global $post;
+
+	/* Don't display it on single post. */
+	if ( is_singular() )
+		return;
+
+	/* Set up a default, empty $html variable. */
+	$html = '';
+
+	/* Check the [gallery] shortcode in post content. */
+	$gallery = get_post_gallery( $post->ID, false );
+
+	/* Check if the [gallery] exist. */
+	if ( $gallery ) {
+
+		/* Check if the gallery ids exist. */
+		if ( isset( $gallery['ids'] ) ) {
+
+			/* Get the gallery ids and convert it into array. */
+			$ids = explode( ',', $gallery['ids'] );
+
+			/* Display the gallery in a cool slideshow on index page. */
+			$html = '<ul class="rslides">';
+				foreach( $ids as $id ) {
+					$html .= '<li>';
+					$html .= wp_get_attachment_image( $id, 'satu-featured' );
+					$html .= '</li>';
+				}
+			$html .= '</ul>';
+
+		} else {
+
+			/* If gallery ids not exist, display the standard gallery markup. */
+			$html = get_post_gallery( $post->ID );
+
+		}
+
+	/* If no [gallery] in post content, get attached images to the post. */
+	} else {
+
+		/* Set up default arguments. */
+		$defaults = array( 
+			'order'          => 'ASC',
+			'post_type'      => 'attachment',
+			'post_parent'    => $post->ID,
+			'post_mime_type' => 'image',
+			'numberposts'    => -1
+		);
+
+		/* Retrieves attachments from the post. */
+		$attachments = get_children( apply_filters( 'satu_gallery_format_args', $defaults ) );
+
+		/* Check if attachments exist. */
+		if ( $attachments ) {
+
+			/* Display the attachment images in a cool slideshow on index page. */
+			$html = '<ul class="rslides">';
+				foreach ( $attachments as $attachment ) {
+					$html .= '<li>';
+					$html .= wp_get_attachment_image( $attachment->ID, 'satu-featured' );
+					$html .= '</li>';
+				}
+			$html .= '</ul>';
+
+		}
+
+	}
+
+	/* Return the gallery images. */
+	return $html;
+
 }
 ?>

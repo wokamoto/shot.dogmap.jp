@@ -4,10 +4,11 @@
  *
  * Template used to show post content when a more specific template cannot be found.
  *
- * @package satu
- * @author	Satrya
- * @license	license.txt
- * @since 	1.0
+ * @since      1.0
+ * @author     Satrya <satrya@satrya.me>
+ * @copyright  Copyright (c) 2013 - 2014, Satrya
+ * @link       http://satrya.me/wordpress-themes/satu/
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 // Action hook for placing content before post content
@@ -20,6 +21,13 @@ do_action( 'satu_entry_before' );
 			// Action hook for placing content after opening post content
 			do_action( 'satu_entry_open' ); 
 		?>
+
+		<figure class="entry-thumbnail hmedia">
+			<?php if ( current_theme_supports( 'get-the-image' ) )
+				// Function to load post attachments/thumbnails
+				get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'satu-featured', 'image_class' => 'photo' ) ); 
+			?>
+		</figure><!-- .entry-thumbnail .hmedia -->
 
 		<header class="entry-header">
 			<?php

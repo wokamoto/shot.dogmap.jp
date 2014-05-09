@@ -7,10 +7,11 @@
  * wrapper, which is opened with the header.php file. It also executes key functions needed
  * by the theme, child themes, and plugins. 
  *
- * @package satu
- * @author	Satrya
- * @license	license.txt
- * @since 	1.0
+ * @since      1.0
+ * @author     Satrya <satrya@satrya.me>
+ * @copyright  Copyright (c) 2013 - 2014, Satrya
+ * @link       http://satrya.me/wordpress-themes/satu/
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 ?>
 			</div><!-- .container -->
@@ -31,9 +32,7 @@
 
 			<div class="container">
 
-				<div class="footer-content">
-					<?php echo apply_atomic_shortcode( 'footer_content', '<p class="credit">' . __( 'Copyright &copy; [the-year] [site-link]. Powered by [wp-link] and [theme-link]', 'satu' ) . '</p>' ); ?>
-				</div><!-- .footer-content -->
+				<div class="footer-content"><?php hybrid_footer_content(); ?></div><!-- .footer-content -->
 
 			</div><!-- .container -->
 

@@ -4,10 +4,11 @@
  *
  * Template used to show posts with the 'gallery' post format.
  *
- * @package satu
- * @author	Satrya
- * @license	license.txt
- * @since 	1.0
+ * @since      1.0
+ * @author     Satrya <satrya@satrya.me>
+ * @copyright  Copyright (c) 2013 - 2014, Satrya
+ * @link       http://satrya.me/wordpress-themes/satu/
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 // Action hook for placing content before post content
@@ -22,34 +23,12 @@ do_action( 'satu_entry_before' );
 		?>
 
 		<?php if ( ! is_singular( get_post_type() ) ) { ?>
-
+				
 			<figure class="entry-thumbnail hmedia">
 				<?php
-				$defaults = array(
-					'order'          => 'ASC',
-					'post_type'      => 'attachment',
-					'post_parent'    => $post->ID,
-					'post_mime_type' => 'image',
-					'numberposts'    => -1,
-				);
-
-				$gallery_args = apply_filters( 'satu_gallery_format_args', $defaults );
-				$attachments = get_children( $gallery_args );
-
-				if ( $attachments ) : ?>
-
-					<ul class="rslides">
-
-						<?php foreach ( $attachments as $attachment ) { ?>
-							<li>
-								<?php echo wp_get_attachment_image( $attachment->ID, 'satu-featured', false, false ); ?>
-							</li>
-						<?php } ?>
-
-					</ul><!-- .rslides -->
-
-				<?php endif; ?>
-
+					// Please open functions.php for more information
+					echo satu_get_format_gallery();
+				?>
 			</figure><!-- .entry-thumbnail .hmedia -->
 
 			<header class="entry-header">

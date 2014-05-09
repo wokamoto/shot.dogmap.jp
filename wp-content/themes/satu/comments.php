@@ -5,10 +5,11 @@
  * Lists comments and calls the comment form.  Individual comments have their own templates.  The 
  * hierarchy for these templates is $comment_type.php, comment.php.
  *
- * @package satu
- * @author	Satrya
- * @license	license.txt
- * @since 	1.0
+ * @since      1.0
+ * @author     Satrya <satrya@satrya.me>
+ * @copyright  Copyright (c) 2013 - 2014, Satrya
+ * @link       http://satrya.me/wordpress-themes/satu/
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 /* If a post password is required or no comments are given and comments/pings are closed, return. */

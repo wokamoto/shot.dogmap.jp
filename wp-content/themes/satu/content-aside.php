@@ -4,10 +4,11 @@
  *
  * Template used to show posts with the 'aside' post format.
  *
- * @package satu
- * @author	Satrya
- * @license	license.txt
- * @since 	1.0
+ * @since      1.0
+ * @author     Satrya <satrya@satrya.me>
+ * @copyright  Copyright (c) 2013 - 2014, Satrya
+ * @link       http://satrya.me/wordpress-themes/satu/
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 // Action hook for placing content before post content

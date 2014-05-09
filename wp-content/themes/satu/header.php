@@ -5,16 +5,15 @@
  * Template part file that contains the HTML document head and 
  * opening HTML body elements, as well as the site header
  *
- * @package satu
- * @author	Satrya
- * @license	license.txt
- * @since 	1.0
- *
+ * @since      1.0
+ * @author     Satrya <satrya@satrya.me>
+ * @copyright  Copyright (c) 2013 - 2014, Satrya
+ * @link       http://satrya.me/wordpress-themes/satu/
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 ?>
 <!DOCTYPE html>
-<!--[if IE 8]>    <html class="ie8" <?php language_attributes(); ?>> <![endif]-->
-<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
+<html <?php language_attributes(); ?>>
 <head>
 	
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -62,7 +61,7 @@
 							// Please open functions.php for more information
 							satu_site_title(); 
 						?>
-					</div>
+					</div><!-- .site-branding -->
 
 				</div><!-- .container -->
 

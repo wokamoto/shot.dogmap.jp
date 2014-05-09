@@ -1,16 +1,15 @@
-![Satu - Free Wordpress Theme](http://satrya.me/wp-content/uploads/2013/04/satu-free-wordpress-theme-530x450.png)  
-
-One-column beautiful and mobile friendly WordPress theme, good choice for professional blogger and smart photographer.
+One-column mobile friendly, beautiful and modern [Photography WordPress theme](http://satrya.me/wordpress-themes/satu/). It comes with customizable background, post-format supported, unlimited color choices, stunning featured image and much more. Get professional support http://satrya.me/support/
 
 ## Project detail
 Contributors: Satrya  
+Support: http://satrya.me/support/  
 Donate link: http://satrya.me/donate/  
-Demo: http://demo.themephe.com/satu   
+Demo: http://preview.satrya.me/satu  
 Requires at least: 3.6  
-Tested up to: 3.6  
-Stable tag: 1.8  
+Tested up to: 3.9  
+Stable tag: 2.2 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
-Browser support: Google Chrome, Firefox, Opera, Safari, IE8, IE9  
+Browser support: Google Chrome, Firefox, Opera, Safari, IE9  
 
 ## Installation
 
@@ -28,7 +27,9 @@ Browser support: Google Chrome, Firefox, Opera, Safari, IE8, IE9
 
 ## Features Include
 
+* Color customizer
 * Ability to upload your own custom logo
+* Ability to upload your own custom favicon
 * Ability to create custom post format
 * Post setting that allows you to add a custom stylesheet for individual posts
 * A smart breadcrumb menu that handles tons of permalink setups
@@ -52,52 +53,24 @@ All bundled files license:
 * [FitVids](http://fitvidsjs.com/) - WTFPL license
 * [Reponsive Slides](http://responsiveslides.com) - MIT License
 * [Respond](http://j.mp/respondjs) - MIT/GPLv2
-* [iOS orientationchange](https://github.com/scottjehl/iOS-Orientationchange-Fix) - MIT License
 * [imagesLoaded](https://github.com/desandro/imagesloaded) - MIT License
 
 ## Changelog
 ```
-1.8 - 17/08/2013
-- Update Hybrid Core
-- Update post format video & audio
-- Fix wrong font-family in site descriptions
-- Remove automatically add image to the post content when choosing post format image
-- Update documentation
-
-1.7 - 23/05/2013
-- Fix disqus plugin issue
-- Support custom header to change the avatar in the header
-- Update outdated script
-
-1.6 - 20/04/2013
-- Use get_children rather than get_posts for the gallery format
-- Post type page now support featured image pros @lkraav 
-
-1.5 - 25/03/2013
-- Remove double <head> tag
-- Add action hook for footer
-
-1.4 - 14/02/2013
-- Update Core
-- Update screenshot
-- Fix Page not displayed content properly
-- Overflow pre tag
-- Pass the many trackback test data
-
-1.3 - 12/02/2013
-- Remove un-needed code
-- Update hybrid
-- Move HTML5 Shiv
-
-1.2 - 05/02/2013
-- Add attachment template
-- Fix widget style bug
-- Fix Comments not showing
-
-1.1 - 02/02/2013
-- Fix recent comment widget style bug
-- Remove background color when hovering image
-
-1.0
-- Initial released
+2.1 - 3/30/2014
+- Add support Jetpack comment, tiled gallery, sharing, like and related posts
+- Add new custom menu
+- Add favicon and apple touch icon setting in customizer
+- Add new default color
+- Add custom unlimited color in customizer
+- Add new way to use gallery post format
+- Add new way to use link post format
+- Add dashicons support for menu
+- Add off-canvas mobile menu
+- Add option to show/hide avatar
+- Better custom header experience
+- Better writing experience
+- Tweak responsive style
+- Fix breadcrumbs double prefix issue
+- Update FitVids.js
 ```

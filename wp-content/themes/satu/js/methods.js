@@ -1,7 +1,6 @@
 /* Author:
 M.Satrya - http://twitter.com/msattt
 */
-
 var $ = jQuery.noConflict();
 $(document).ready(function(){
 

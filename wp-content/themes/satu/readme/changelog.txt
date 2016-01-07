@@ -1,0 +1,3 @@
+2.3 - 6/11/2014
+- Add Spanish language
+- Fix issue with the widget search button

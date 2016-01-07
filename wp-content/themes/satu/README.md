@@ -1,4 +1,4 @@
-One-column mobile friendly, beautiful and modern [Photography WordPress theme](http://satrya.me/wordpress-themes/satu/). It comes with customizable background, post-format supported, unlimited color choices, stunning featured image and much more. Get professional support http://satrya.me/support/
+One-column mobile friendly, beautiful and modern [Photography WordPress theme](http://satrya.me/wordpress-themes/satu/). It comes with customizable background, post-format supported, unlimited color choices, stunning featured image and much more.
 
 ## Project detail
 Contributors: Satrya  
@@ -6,8 +6,8 @@ Support: http://satrya.me/support/
 Donate link: http://satrya.me/donate/  
 Demo: http://preview.satrya.me/satu  
 Requires at least: 3.6  
-Tested up to: 3.9  
-Stable tag: 2.2 
+Tested up to: 3.9.1  
+Stable tag: 2.3  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 Browser support: Google Chrome, Firefox, Opera, Safari, IE9  
 
@@ -43,6 +43,7 @@ Browser support: Google Chrome, Firefox, Opera, Safari, IE9
 ## Language
 
 * English
+* Spanish - Thanks to [jossemarGT](https://github.com/jossemarGT)
 * [Submit yours](https://github.com/satrya/satu/issues)
 
 ## License
@@ -57,20 +58,7 @@ All bundled files license:
 
 ## Changelog
 ```
-2.1 - 3/30/2014
-- Add support Jetpack comment, tiled gallery, sharing, like and related posts
-- Add new custom menu
-- Add favicon and apple touch icon setting in customizer
-- Add new default color
-- Add custom unlimited color in customizer
-- Add new way to use gallery post format
-- Add new way to use link post format
-- Add dashicons support for menu
-- Add off-canvas mobile menu
-- Add option to show/hide avatar
-- Better custom header experience
-- Better writing experience
-- Tweak responsive style
-- Fix breadcrumbs double prefix issue
-- Update FitVids.js
+2.3 - 6/11/2014
+- Add Spanish language
+- Fix issue with the widget search button
 ```

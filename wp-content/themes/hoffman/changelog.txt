@@ -1,0 +1,107 @@
+*** Hoffman Changelog ***
+
+
+Version 1.14 (2015-12-29)
+-------------------------
+- Added a sanitize checkbox callback
+
+
+Version 1.13 (2015-12-29)
+-------------------------
+- Increased the size of the nav-toggle clickable area
+- Fixed a bug with centered images not being centered
+- Fixed sticky icon link not working
+- Added missing accent color elements
+- Updated theme description
+- Cleaned up style.css a little
+- Removed superfluous <title> tag in the header (uses title_tag() from v1.10 onwards)
+- Added a customizer setting for whether the main menu should be hidden behind the toggle or not
+
+
+Version 1.12 (2015-08-25)
+-------------------------
+- Fixed an issue with overflowing images
+- Added the .screen-reader-text class
+
+
+Version 1.11 (2015-08-11)
+-------------------------
+- Fixed align-center images overflowing on smaller devices
+- Replaced custom title function with title-tag support
+- The widgets now use __construct()
+
+
+Version 1.10 (2015-04-07)
+-------------------------
+- Fixed so that the Add Comment-link is only displayed if comments are open
+- Removed the quote format
+- Removed the video format
+- Removed the styling and js for said formats
+- Removed the Dribble widget
+- Removed the video widget
+- Updated the widgets for recent posts, recent comments and flickr to include indexing of variables
+- Updated the Swedish translation due to changes in name spaces
+- Fixed an error in functions.php that would prevent Genericons from being loaded in child themes
+- Added sanitation to the Customize functions in functions.php
+- Removed a function in functions.php that used the add_shortcode() function
+
+
+Version 1.09 (2014-09-24)
+-------------------------
+- Fixed a bug that prevented post videos from being displayed on index.php
+- Added a fixed -webkit-font-smoothing parameter to style.css
+
+
+Version 1.08 (2014-09-24)
+-------------------------
+- Fixed the same bug for the video post format meta boxes (for real this time)
+
+
+Version 1.07 (2014-09-16)
+-------------------------
+- Fixed a critical bug which caused the quote content and attribution boxes to malfunction
+
+
+Version 1.06 (2014-08-21)
+-------------------------
+- Escaped URLs
+- Added function prefixes
+- Misc bug fixes
+
+
+Version 1.05 (2014-08-18)
+-------------------------
+- Added licensing information for screenshot.png
+- Misc bug fixes
+
+
+Version 1.04 (2014-08-06)
+-------------------------
+- Updated style.css for brevity and browser compatibility
+- Added a missing namespace, updated the Swedish translation
+- Updated the form/input styling
+- Updated the editor style with missing elements
+
+
+Version 1.03 (2014-08-01)
+-------------------------
+- Spruced up the gallery slideshow navigation
+- Improved the navigation toggle
+
+
+Version 1.02 (2014-07-19)
+-------------------------
+- Added missing namespaces in single.php
+– Removed extra semicolon from the recent comments widget
+- Added missing brackets in functions.php
+- Updated the .mo for Swedish
+
+
+Version 1.01 (2014-07-18)
+-------------------------
+- Fixed the author position function in single.php
+– Fixed CSS conflict between the author avatar in single.php and Gravatar
+
+
+Version 1.0 (2014-07-17)
+------------------------- 

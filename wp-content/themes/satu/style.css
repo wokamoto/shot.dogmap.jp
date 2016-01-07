@@ -1,8 +1,8 @@
 /*
 Theme Name: Satu
 Theme URI: http://satrya.me/wordpress-themes/satu/
-Description: One-column mobile friendly, beautiful and modern Photography WordPress theme. It comes with customizable background, post-format supported, unlimited color choices, stunning featured image and much more. Get professional support http://satrya.me/support/
-Version: 2.2
+Description: One-column mobile friendly, beautiful and modern Photography WordPress theme. It comes with customizable background, post-format supported, unlimited color choices, stunning featured image and much more.
+Version: 2.3
 Author: Satrya
 Author URI:	http://satrya.me/
 Tags: light, one-column, responsive-layout, custom-background, featured-images, microformats, post-formats, sticky-post, threaded-comments, translation-ready, photoblogging
@@ -1261,11 +1261,11 @@ object {
   padding: 8px 0;
 }
 
-.widget-search label {
+.widget.search label {
   display: none;
 }
-.widget-search input[type="submit"] {
-  padding: 8px 6px;
+.widget.search input[type="submit"] {
+  padding: 9px 6px;
 }
 
 .widget_recent_comments li a {

@@ -32,7 +32,6 @@ add_action( 'after_setup_theme', 'satu_load_libraries', 15 );
  * @since 1.0
  */
 function satu_theme_setup() {
-
 	/* Get action/filter hook prefix. */
 	$prefix = hybrid_get_prefix();
 

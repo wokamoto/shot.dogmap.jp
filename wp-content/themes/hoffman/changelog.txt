@@ -1,6 +1,21 @@
 *** Hoffman Changelog ***
 
 
+Version 1.17 (2016-06-18)
+-------------------------
+- Added the new theme directory tags
+
+
+Version 1.16 (2016-04-02)
+-------------------------
+- Fixed respond input margins
+
+
+Version 1.15 (2016-01-10)
+-------------------------
+- Removed the show/hide menu customizer option added in the last update
+
+
 Version 1.14 (2015-12-29)
 -------------------------
 - Added a sanitize checkbox callback

@@ -1,64 +1,62 @@
-One-column mobile friendly, beautiful and modern [Photography WordPress theme](http://satrya.me/wordpress-themes/satu/). It comes with customizable background, post-format supported, unlimited color choices, stunning featured image and much more.
+# Satu WordPress Theme
+One-column mobile friendly, minimal and modern Photography or Personal WordPress theme. It's perfect for you who want to share your travel photo or journal.
 
 ## Project detail
 Contributors: Satrya  
-Support: http://satrya.me/support/  
-Donate link: http://satrya.me/donate/  
-Demo: http://preview.satrya.me/satu  
-Requires at least: 3.6  
-Tested up to: 3.9.1  
-Stable tag: 2.3  
+Support: https://github.com/satrya/satu/issues  
+Demo: http://satrya.me/satu/  
+Requires at least: 4.5  
+Tested up to: 4.5.1  
+Stable tag: 3.0.0  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
-Browser support: Google Chrome, Firefox, Opera, Safari, IE9  
+Browser support: Google Chrome, Firefox, Opera, Safari, Edge  
+Tags: blue, white, light, one-column, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, microformats, sticky-post, threaded-comments, translation-ready, photoblogging  
 
 ## Installation
 
-#### Manual
-* Go to [this page](http://wordpress.org/themes/satu), then download the theme.
-* Upload the **satu** folder to the `/wp-content/themes/` directory via your FTP.
-* Activate the theme through the dashboard.
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Satu in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
 
-#### Installation using "Add New Theme"
-* From your Admin UI (Dashboard), use the menu to select **Themes -> Add New**.
-* Search for **satu**.
-* Click the **Install** button and activate it.
+## Copyright
 
-**Please open `docs/readme.html` to read full documentation**
+Satu WordPress Theme, Copyright 2013-2016 http://satrya.me/
+Satu is distributed under the terms of the GNU GPL
 
-## Features Include
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
 
-* Color customizer
-* Ability to upload your own custom logo
-* Ability to upload your own custom favicon
-* Ability to create custom post format
-* Post setting that allows you to add a custom stylesheet for individual posts
-* A smart breadcrumb menu that handles tons of permalink setups
-* Built-in pagination for your home, archive, and search pages
-* Post thumbnails that work with WordPress' featured image functionality and provide extra features
-* Fully internationalized, so you can run the theme in any language
-* Integration with the WordPress theme customizer to allow you to customize the look of your site
-* Ability to create custom templates for any post type in multiple ways
-* And much, much more!
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
 
-## Language
+---
 
-* English
-* Spanish - Thanks to [jossemarGT](https://github.com/jossemarGT)
-* [Submit yours](https://github.com/satrya/satu/issues)
+**Satu Theme bundles the following third-party resources:**
 
-## License
+HTML5 Shiv v3.7.3, Copyright 2014 Alexander Farkas  
+Licenses: MIT/GPL2  
+Source: https://github.com/aFarkas/html5shiv
 
-All bundled files license:
-* [jQuery](http://jquery.org/) - MIT/GPL
-* [HTML5 Shiv](https://github.com/aFarkas/html5shiv) - MIT/GPL2
-* [FitVids](http://fitvidsjs.com/) - WTFPL license
-* [Reponsive Slides](http://responsiveslides.com) - MIT License
-* [Respond](http://j.mp/respondjs) - MIT/GPLv2
-* [imagesLoaded](https://github.com/desandro/imagesloaded) - MIT License
+jQuery FitVids v1.1, Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com  
+License: WTFPL  
+Source: https://github.com/davatron5000/FitVids.js/
+
+ResponsiveSlides.js v1.54, Copyright (c) 2011-2012 @viljamis  
+License: MIT  
+Source: http://responsiveslides.com
+
+Image used in screenshot.png:  
+A photo by Kevin Young (https://unsplash.com/@kevinjyoung), licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 
 ## Changelog
+
 ```
-2.3 - 6/11/2014
-- Add Spanish language
-- Fix issue with the widget search button
+3.0.1 - May 4, 2016
+* Contact form 7 compatibility
+* Changed default body font
+* Support featured image on home and archives page
 ```

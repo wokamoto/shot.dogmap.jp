@@ -10,8 +10,8 @@
 		
 			<h2 class="comments-title fleft">
 			
-				<?php echo count($wp_query->comments_by_type['comment']) . ' ';
-				echo _n( 'Comment' , 'Comments' , count($wp_query->comments_by_type['comment']), 'hoffman' ); ?>
+				<?php echo count($wp_query->comments_by_type[comment]) . ' ';
+				echo _n( 'Comment' , 'Comments' , count($wp_query->comments_by_type[comment]), 'hoffman' ); ?>
 				
 			</h2>
 			
@@ -39,8 +39,8 @@
 			
 					<h3 class="pingbacks-title">
 					
-						<?php echo count($wp_query->comments_by_type['pings']) . ' ';
-						echo _n( 'Pingback', 'Pingbacks', count($wp_query->comments_by_type['pings']), 'hoffman' ); ?>
+						<?php echo count($wp_query->comments_by_type[pings]) . ' ';
+						echo _n( 'Pingback', 'Pingbacks', count($wp_query->comments_by_type[pings]), 'hoffman' ); ?>
 					
 					</h3>
 				

@@ -1,59 +1,24 @@
-<?php
-/**
- * Footer Template
- *
- * The footer template is generally used on every page of your site. Nearly all other
- * templates call it somewhere near the bottom of the file. It is used mostly as a closing
- * wrapper, which is opened with the header.php file. It also executes key functions needed
- * by the theme, child themes, and plugins. 
- *
- * @since      1.0
- * @author     Satrya <satrya@satrya.me>
- * @copyright  Copyright (c) 2013 - 2014, Satrya
- * @link       http://satrya.me/wordpress-themes/satu/
- * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- */
-?>
-			</div><!-- .container -->
+		</div><!-- .container -->
+	</div><!-- #main -->
 
-			<?php 
-				// Action hook for placing content before closing #main
-				do_action( 'satu_main_close' ); 
-			?>
+	<footer id="footer" class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
 
-		</div><!-- #main -->
+		<?php get_template_part( 'sidebar' ); // Loads sidebar.php template file. ?>
 
-		<?php 
-			// Action hook for placing content after closing #main
-			do_action( 'satu_main_after' ); 
-		?>
-
-		<footer id="footer" class="site-footer" role="contentinfo">
-
+		<div class="copyright">
 			<div class="container">
 
-				<div class="footer-content"><?php hybrid_footer_content(); ?></div><!-- .footer-content -->
+				<?php printf( esc_html__( 'Proudly powered by %s', 'satu' ), '<a href="https://wordpress.org/" rel="designer">WordPress</a>' ); ?>
+				<span class="sep"> | </span>
+				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'satu' ), 'Satu', '<a href="http://satrya.me/" rel="designer">Satrya</a>' ); ?>
 
-			</div><!-- .container -->
+			</div>
+		</div>
 
-		</footer><!-- #footer -->
+	</footer><!-- #footer -->
 
-		<?php 
-			// Action hook for placing content after closing #footer
-			do_action( 'satu_footer_after' ); 
-		?>
+</div> <!-- #page .site -->
 
-	</div> <!-- #page .site -->	
-
-	<?php 
-		// Action hook for placing content after closing #page
-		do_action( 'satu_body_close' ); 
-	?>		
-
-<?php 
-	// wp_footer
-	wp_footer(); 
-?>
-
+<?php wp_footer(); ?>
 </body>
 </html>

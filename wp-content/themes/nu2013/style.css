@@ -4,7 +4,7 @@ Theme URI: http://wordpress.org/themes/nu2013
 Author: nukaga
 Author URI: http://nuuno.net/
 Description: Blue child theme for the Twenty Thirteen theme.
-Version: 1.2
+Version: 2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, white, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
@@ -14,17 +14,16 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-@import url('../twentythirteen/style.css');
-
 /*font*/
 
 body, button, input, select, textarea {
-	font: 16px/1.6 “ヒラギノ角ゴ Pro W3″, “Hiragino Kaku Gothic Pro”, メイリオ, Meiryo, Osaka,“ＭＳ Ｐゴシック”, “MS PGothic”, sans-serif;
+	font: 16px/1.6 "游ゴシック", "Yu Gothic", YuGothic, 'ヒラギノ角ゴ Pro W3', "Hiragino Kaku Gothic Pro", "Meiryo", Meiryo, sans-serif;
+	font-weight: 500;
 	color: #3E3E3E;
 }
 
 h1,h2,h3,h4,h5,h6{
-	font-family:“ヒラギノ角ゴ Pro W3″, “Hiragino Kaku Gothic Pro”, メイリオ, Meiryo, Osaka,“ＭＳ Ｐゴシック”, “MS PGothic”, sans-serif;
+	font-family:"游ゴシック", "Yu Gothic", YuGothic, “ヒラギノ角ゴ Pro W3″, “Hiragino Kaku Gothic Pro”, メイリオ, Meiryo, Osaka,“ＭＳ Ｐゴシック”, “MS PGothic”, sans-serif;
 }
 
 h1{

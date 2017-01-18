@@ -1,91 +1,25 @@
-<?php
-/**
- * Index Template
- * 
- * This is the default template. It is used when a more specific template can't be found to display
- * posts.
- *
- * @since      1.0
- * @author     Satrya <satrya@satrya.me>
- * @copyright  Copyright (c) 2013 - 2014, Satrya
- * @link       http://satrya.me/wordpress-themes/satu/
- * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- */
+<?php get_header(); ?>
 
-// Loads the header.php template
-get_header(); 
-?>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
- 	<?php 
- 		// Action hook for placing content before opening #primary
- 		do_action( 'satu_content_before' ); 
- 	?>
- 		
-	<div id="primary" class="site-content no-sidebar">
-		
-		<?php 
-			// Action hook for placing content before opening #content
-			do_action( 'satu_content_open' ); 
-		?>
-		
-		<div id="content" class="content hfeed" role="main">
-			
-			<?php 
-				// Loads the loop-meta.php template
-				get_template_part( 'loop', 'meta' ); 
-			?>
-			
 			<?php if ( have_posts() ) : ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php hybrid_get_content_template(); ?>
-
-					<?php if ( is_singular() ) { ?>
-
-						<?php
-							// Action hook for placing content after singular page
-							do_action( 'satu_singular_after' ); 
-						?>
-
-						<?php
-							// Loads the comments.php template
-							comments_template( '/comments.php', true ); 
-						?>
-
-					<?php } ?>
+					<?php get_template_part( 'partials/content', get_post_format() ); ?>
 
 				<?php endwhile; ?>
 
-			<?php elseif ( current_user_can( 'edit_posts' ) ) : // check, if current user can edit posts ?>
+				<?php the_posts_navigation(); ?>
 
-				<?php 
-					// Loads the no-results.php template
-					get_template_part( 'no-results' ); 
-				?>
+			<?php else : ?>
+
+				<?php get_template_part( 'partials/content', 'none' ); ?>
 
 			<?php endif; ?>
-			
-		</div><!-- #content .content .hfeed -->
-		
-		<?php 
-			// Action hook for placing content after closing #content
-			do_action( 'satu_content_close' ); 
-		?>
-		
-		<?php 
-			// Loads the loop-nav.php template
-			get_template_part( 'loop', 'nav' ); 
-		?>
-		
-	</div><!-- #primary .site-content .no-sidebar -->
- 		
- 	<?php 
- 		// Action hook for placing content after closing #primary
- 		do_action( 'satu_content_after' ); 
- 	?>
- 
-<?php 
-	// Loads the footer.php template
-	get_footer(); 
-?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php get_footer(); ?>

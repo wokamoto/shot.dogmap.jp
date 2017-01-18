@@ -409,10 +409,6 @@ class hoffman_Customize {
             'description' => __('Upload a logo to replace the default site name and description in the header', 'hoffman'),
       ) );
         
-        $wp_customize->add_section( 'show_menu_section', array(
-            'priority'  => 1020,
-            'title'     => __( 'Main Menu Display Settings', 'hoffman' ),
-        ));
       
       //2. Register new settings to the WP database...
       $wp_customize->add_setting( 'accent_color', //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
@@ -423,11 +419,6 @@ class hoffman_Customize {
             'sanitize_callback' => 'sanitize_hex_color'
          ) 
       );
-      
-      $wp_customize->add_setting( 'show_menu', array(
-          'default'    => '1',
-          'sanitize_callback' => 'hoffman_sanitize_checkbox',
-      ) );
 
       
       $wp_customize->add_setting( 'hoffman_logo', 
@@ -454,17 +445,7 @@ class hoffman_Customize {
 		    'settings' => 'hoffman_logo',
 		) ) );
         
-        $wp_customize->add_control(
-            new WP_Customize_Control( $wp_customize, 'show_menu',
-                array(
-                    'label'     => __( 'Hide the main menu behind the navigation toggle', 'hoffman' ),
-                    'section'   => 'show_menu_section',
-                    'settings'  => 'show_menu',
-                    'type'      => 'checkbox',
-                )
-            )
-        );
-      
+        
       //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
       $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
       $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
@@ -551,14 +532,6 @@ class hoffman_Customize {
 	      
       <?php
    }
-   
-    function hoffman_sanitize_checkbox( $input ) {
-        if ( $input == 1 ) {
-            return 1;
-        } else {
-            return '';
-        }
-    }
    
    public static function hoffman_live_preview() {
       wp_enqueue_script( 

@@ -36,8 +36,8 @@
 					<?php endif; ?>
 					
 				<?php endif; ?>
-				
-				<a class="nav-toggle<?php if ( get_theme_mod( 'show_menu' ) == true ) echo ' show-desktop'; ?>" title="<?php _e( 'Click to view the navigation', 'hoffman' ); ?>" href="#">
+                
+				<a class="nav-toggle show-desktop" title="<?php _e( 'Click to view the navigation', 'hoffman' ); ?>" href="#">
 				
 					<div class="bars">
 					
@@ -62,7 +62,7 @@
 								
 			</div> <!-- /header -->
 			
-			<div class="navigation bg-dark<?php if ( get_theme_mod( 'show_menu' ) == true ) echo ' hidden'; ?>">
+			<div class="navigation bg-dark hidden">
 		
 				<div class="section-inner">
 				

@@ -1,74 +1,79 @@
 <?php
 /**
- * Comments Template
+ * The template for displaying comments.
  *
- * Lists comments and calls the comment form.  Individual comments have their own templates.  The 
- * hierarchy for these templates is $comment_type.php, comment.php.
- *
- * @since      1.0
- * @author     Satrya <satrya@satrya.me>
- * @copyright  Copyright (c) 2013 - 2014, Satrya
- * @link       http://satrya.me/wordpress-themes/satu/
- * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
  */
 
-/* If a post password is required or no comments are given and comments/pings are closed, return. */
-if ( post_password_required() || ( !have_comments() && !comments_open() && !pings_open() ) )
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
 	return;
+}
 ?>
 
-<div id="comments-template" class="comments-block">
+<div id="comments" class="comments-area">
 
-	<div class="comments-wrap">
+	<?php
+	// You can start editing here -- including this comment!
+	if ( have_comments() ) : ?>
+		<h2 class="comments-title">
+			<?php
+				printf( // WPCS: XSS OK.
+					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'satu' ) ),
+					number_format_i18n( get_comments_number() ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			?>
+		</h2>
 
-		<div id="comments">
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'satu' ); ?></h2>
+			<div class="nav-links">
 
-			<?php if ( have_comments() ) : ?>
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'satu' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'satu' ) ); ?></div>
 
-				<h3 id="comments-number" class="comments-header"><?php comments_number( __( 'No Responses', 'satu' ), __( 'One Response', 'satu' ), __( '% Responses', 'satu' ) ); ?></h3>
+			</div><!-- .nav-links -->
+		</nav><!-- #comment-nav-above -->
+		<?php endif; // Check for comment navigation. ?>
 
-				<?php if ( get_option( 'page_comments' ) ) : ?>
-					<div class="comments-nav">
-						<span class="page-numbers"><?php printf( __( 'Page %1$s of %2$s', 'satu' ), ( get_query_var( 'cpage' ) ? absint( get_query_var( 'cpage' ) ) : 1 ), get_comment_pages_count() ); ?></span>
-						<?php previous_comments_link(); ?>
-						<?php next_comments_link(); ?>
-					</div><!-- .comments-nav -->
-				<?php endif; ?>
+		<ol class="comment-list">
+			<?php
+				wp_list_comments( array(
+					'style'       => 'ol',
+					'short_ping'  => true
+				) );
+			?>
+		</ol><!-- .comment-list -->
 
-				<?php 
-					// Action hook for placing content before the comment list
-					do_action( 'satu_comment_list_before' ); 
-				?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'satu' ); ?></h2>
+			<div class="nav-links">
 
-				<ol class="comment-list">
-					<?php wp_list_comments( hybrid_list_comments_args() ); ?>
-				</ol><!-- .comment-list -->
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'satu' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'satu' ) ); ?></div>
 
-				<?php 
-					// Action hook for placing content after the comment list
-					do_action( 'satu_comment_list_after' ); 
-				?>
+			</div><!-- .nav-links -->
+		</nav><!-- #comment-nav-below -->
+		<?php
+		endif; // Check for comment navigation.
 
-			<?php endif; ?>
+	endif; // Check for have_comments().
 
-			<?php if ( pings_open() && !comments_open() ) : ?>
+	// If comments are closed and there are comments, let's leave a little note, shall we?
+	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'satu' ); ?></p>
+	<?php
+	endif;
 
-				<p class="comments-closed pings-open">
-					<?php printf( __( 'Comments are closed, but <a href="%s" title="Trackback URL for this post">trackbacks</a> and pingbacks are open.', 'satu' ), esc_url( get_trackback_url() ) ); ?>
-				</p><!-- .comments-closed .pings-open -->
+	comment_form();
+	?>
 
-			<?php elseif ( !comments_open() ) : ?>
-
-				<p class="comments-closed">
-					<?php _e( 'Comments are closed.', 'satu' ); ?>
-				</p><!-- .comments-closed -->
-
-			<?php endif; ?>
-
-		</div><!-- #comments -->
-
-		<?php comment_form(); // Loads the comment form. ?>
-
-	</div><!-- .comments-wrap -->
-
-</div><!-- #comments-template -->
+</div><!-- #comments -->

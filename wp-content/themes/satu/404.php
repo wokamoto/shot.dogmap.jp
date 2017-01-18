@@ -1,92 +1,50 @@
-<?php
-/**
- * 404 Template
- *
- * The 404 template is used when a reader visits an invalid URL on your site. By default, the template will 
- * display a generic message.
- *
- * @since      1.0
- * @author     Satrya <satrya@satrya.me>
- * @copyright  Copyright (c) 2013 - 2014, Satrya
- * @link       http://satrya.me/wordpress-themes/satu/
- * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- */
+<?php get_header(); ?>
 
-// Loads the header.php template
-get_header(); 
-?>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-	<?php 
- 		// Action hook for placing content before opening #primary
- 		do_action( 'satu_content_before' ); 
- 	?>
+			<section class="error-404 not-found">
 
-	<div id="primary" class="site-content no-sidebar">
+				<div class="page-content">
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'satu' ); ?></p>
 
-		<?php 
-			// Action hook for placing content before opening #content
-			do_action( 'satu_content_open' ); 
-		?>
+					<?php
+						get_search_form();
 
-		<div id="content" class="content hfeed" role="main">
+						the_widget( 'WP_Widget_Recent_Posts' );
 
-			<?php
-				// Action hook for placing content before post content
-				do_action( 'satu_entry_before' ); 
-			?>
+						if ( satu_categorized_blog() ) : // Only show the widget if site has multiple categories.
+					?>
 
-			<article <?php hybrid_post_attributes(); ?>>
-
-				<?php 
-					// Action hook for placing content after opening post content
-					do_action( 'satu_entry_open' ); 
-				?>
-
-				<header class="entry-header">
-					<h1 class="entry-title"><?php esc_html_e( 'Oops! That page can\'t be found.', 'satu' ); ?></h1>
-				</header>
-
-				<div class="entry-wrap">
-
-					<div class="entry-content-404">
-						
-						<p><?php _e( 'The following is a list of the latest posts from the blog. Maybe it will help you find what you\'re looking for.', 'satu' ); ?></p>
-
+					<div class="widget widget_categories">
+						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'satu' ); ?></h2>
 						<ul>
-							<?php wp_get_archives( array( 'limit' => 10, 'type' => 'postbypost' ) ); ?>
+						<?php
+							wp_list_categories( array(
+								'orderby'    => 'count',
+								'order'      => 'DESC',
+								'show_count' => 1,
+								'title_li'   => '',
+								'number'     => 10,
+							) );
+						?>
 						</ul>
+					</div><!-- .widget -->
 
-					</div><!-- .entry-content-404 -->
+					<?php
+						endif;
 
-				</div><!-- .entry-wrap -->
+						/* translators: %1$s: smiley */
+						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'satu' ), convert_smilies( ':)' ) ) . '</p>';
+						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 
-				<?php 
-					// Action hook for placing content before closing post content
-					do_action( 'satu_entry_close' ); 
-				?>
+						the_widget( 'WP_Widget_Tag_Cloud' );
+					?>
 
-			</article><!-- #post-<?php the_ID(); ?> -->
+				</div><!-- .page-content -->
+			</section><!-- .error-404 -->
 
-			<?php 
-				// Action hook for placing content after post content
-				do_action( 'satu_entry_after' ); 
-			?>
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-		</div><!-- #content .content .hfeed -->
-
-		<?php 
-			// Action hook for placing content after closing #content
-			do_action( 'satu_content_close' ); 
-		?>
-
-	</div><!-- #primary .site-content .no-sidebar -->
-
-	<?php 
- 		// Action hook for placing content after closing #primary
- 		do_action( 'satu_content_after' ); 
- 	?>
-
-<?php 
-	// Loads the footer.php template
-	get_footer(); 
-?>
+<?php get_footer(); ?>

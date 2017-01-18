@@ -1,0 +1,206 @@
+# Copyright (C) 2016 Satrya
+# This file is distributed under the GNU General Public License v2.0 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Satu 3.0.1\n"
+"Report-Msgid-Bugs-To: https://github.com/satrya/satu/issues\n"
+"POT-Creation-Date: 2016-05-04 08:35:16+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Satrya (satrya@satrya.me)\n"
+"Language-Team: Satrya (satrya@satrya.me)\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-KeywordsList: "
+"__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_"
+"x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Textdomain-Support: yes\n"
+
+#: 404.php:9
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the "
+"links below or a search?"
+msgstr ""
+
+#: 404.php:20
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:38
+#. translators: %1$s: smiley
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: comments.php:36 comments.php:57
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:39 comments.php:60
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:40 comments.php:61
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:72
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:11
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:13
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: functions.php:41
+msgid "Primary Location"
+msgstr ""
+
+#: functions.php:100
+msgid "Footer Sidebar"
+msgstr ""
+
+#: functions.php:102
+msgid "The footer sidebar that appears on the bottom of your site."
+msgstr ""
+
+#: inc/template-tags.php:20
+msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/template-tags.php:22
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: menu.php:11
+msgid "Primary Menu"
+msgstr ""
+
+#: partials/content-none.php:4
+msgid "Nothing Found"
+msgstr ""
+
+#: partials/content-none.php:12
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: partials/content-none.php:18
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: partials/content-none.php:26
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: partials/content-page.php:7 partials/content-single.php:14
+msgid "Pages:"
+msgstr ""
+
+#: partials/content-page.php:18
+#. translators: %s: Name of current post
+msgid "Edit %s"
+msgstr ""
+
+#: partials/content-single.php:27 partials/content-single.php:37
+#. translators: used between list items, there is a space after the comma
+msgid ", "
+msgstr ""
+
+#: partials/content-single.php:31
+msgid "Categories: %s"
+msgstr ""
+
+#: partials/content-single.php:41
+msgid "Tags: %s"
+msgstr ""
+
+#: searchform.php:3
+msgid "Search"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Satu"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://satrya.me/themes/satu-theme"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"One-column mobile friendly, minimal and modern Photography or Personal "
+"WordPress theme. It's perfect for you who want to share your travel photo "
+"or journal."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Satrya"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://satrya.me/"
+msgstr ""
+
+#: comments.php:27
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:129
+#. Translators: If there are characters in your language that are not supported
+#. by Open Sans, translate this to 'off'. Do not translate into your own
+#. language.
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:137
+#. Translators: If there are characters in your language that are not supported
+#. by Lora, translate this to 'off'. Do not translate into your own language.
+msgctxt "Lora font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:145
+#. Translators: To add an additional character subset specific to your
+#. language, translate this to 'greek', 'cyrillic', 'devanagari' or
+#. 'vietnamese'. Do not translate into your own language.
+msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
+msgid "no-subset"
+msgstr ""
+
+#: inc/template-tags.php:48
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:53
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#: searchform.php:2
+msgctxt "placeholder"
+msgid "Type keyword &hellip;"
+msgstr ""
+
+#: searchform.php:2
+msgctxt "label"
+msgid "Search for:"
+msgstr ""

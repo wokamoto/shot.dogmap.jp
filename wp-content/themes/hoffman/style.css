@@ -1,10 +1,11 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Hoffman
+    Text Domain: hoffman
 	Theme URI: http://www.andersnoren.se/teman/hoffman-wordpress-theme/
-	Version: 1.14
+	Version: 1.17
 	Description: Hoffman is a beautifully minimal, responsive and retina-ready theme for bloggers. It features a social icon menu, Jetpack support for infinite scroll, five custom widgets, two page templates, editor styling, translation-ready code, custom accent color support, custom background support, support for the gallery post format and much more. Included translations: Swedish/svenska. Demo: http://www.andersnoren.se/themes/hoffman/
-	Tags: gray, white, light, silver, one-column, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+	Tags: blog, one-column, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
 	Author URI: http://www.andersnoren.se
 	License: GNU General Public License version 2.0
@@ -1876,6 +1877,11 @@ div.comment {
 	border-radius: 3px;
 }
 
+.comment-form-comment + .comment-form-author,
+.comment-form-comment + .comment-form-author + .comment-form-email {
+    margin-top: 25px;
+}
+
 .comment-form p + p { margin-top: 25px; }
 
 .comment-form input[type="text"],
@@ -2941,7 +2947,11 @@ img#wpstats { display: none !important; } /* silly wp stats */
 	
 	/* Respond --------------------------------------- */
 	
-	.comment-form p + p { margin-top: 20px; }
+    .comment-form-comment + .comment-form-author,
+    .comment-form-comment + .comment-form-author + .comment-form-email,
+	.comment-form p + p { 
+        margin-top: 20px; 
+    }
 		
 	.comment-form-author, 
 	.comment-form-email {

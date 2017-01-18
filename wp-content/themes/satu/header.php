@@ -1,87 +1,28 @@
-<?php
-/**
- * Header Template Part
- * 
- * Template part file that contains the HTML document head and 
- * opening HTML body elements, as well as the site header
- *
- * @since      1.0
- * @author     Satrya <satrya@satrya.me>
- * @copyright  Copyright (c) 2013 - 2014, Satrya
- * @link       http://satrya.me/wordpress-themes/satu/
- * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- */
-?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-<title><?php hybrid_document_title(); // Document title ?></title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
-<?php 
-	// wp_head
-	wp_head(); 
-?>
-
+<?php wp_head(); ?>
 </head>
 
-<body class="<?php hybrid_body_class(); ?>">
+<body <?php body_class(); ?> itemscope itemtype="http://schema.org/Blog">
 
-<?php 
-	// Action hook for placing content before opening #page
-	do_action( 'satu_body_open' ); 
-?>
+<div id="page" class="site">
 
-	<div id="page" class="site">
+	<?php get_template_part( 'menu' ); // Loads the menu.php template file. ?>
 
-		<?php 
-			// Action hook for placing content above the theme header
-			do_action( 'satu_header_before' ); 
-		?>
-		
-		<header id="masthead" class="site-header" role="banner">
-			
-			<?php 
-				// Action hook for placing content before the theme header content
-				do_action( 'satu_header_open' ); 
-			?>
+	<header id="masthead" class="site-header" itemscope itemtype="http://schema.org/WPHeader">
+		<div class="container">
 
-				<div class="container">
-					
-					<div class="site-branding">
-						<?php 
-							// Display the site title
-							// Please open functions.php for more information
-							satu_site_title(); 
-						?>
-					</div><!-- .site-branding -->
+			<div class="page-header">
+				<?php satu_page_title(); ?>
+			</div>
 
-				</div><!-- .container -->
+		</div>
+	</header>
 
-			<?php 
-				// Action hook for placing content after the theme header content
-				do_action( 'satu_header_close' ); 
-			?>
-			
-		</header><!-- #masthead .site-header -->
-
-		<?php 
-			// Action hook for placing content below the theme header
-			do_action( 'satu_header_after' ); 
-		?>
-		
-		<div id="main" class="site-main">
-
-			<?php 
-				// Action hook for placing content after #main
-				do_action( 'satu_main_open' ); 
-			?>
-
-			<div class="container">
+	<div id="content" class="site-content">
+		<div class="container">

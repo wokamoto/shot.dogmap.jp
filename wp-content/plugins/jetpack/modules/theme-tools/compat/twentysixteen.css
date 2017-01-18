@@ -163,27 +163,20 @@
 
 /* Top Posts & Pages Widget */
 .widget_top-posts .widgets-list-layout .widgets-list-layout-blavatar {
-	border-radius: 50%;
-	margin-right: 0.4375em;
-	max-width: 2.625em;
+	margin-top: 0.25em;
 }
 
 .widget_top-posts .widgets-list-layout-links {
-	width: auto;
-	float: left;
-	padding-top: 0.4375em;
+	width: -webkit-calc(100% - 3.375em);
+	width: calc(100% - 3.375em);
 }
 
 .widget_top-posts .widgets-list-layout li {
-	margin-bottom: 0.4375em;
+	margin-bottom: 0.875em;
 }
 
 .widget_top-posts .widgets-list-layout li:last-child {
 	margin-bottom: 0;
-}
-
-.widget_top-posts .widgets-grid-layout img {
-	border-radius: 50%;
 }
 
 .widget-grid-view-image:nth-child(odd) {
@@ -194,7 +187,6 @@
 .widget_upcoming_events_widget .upcoming-events li {
 	margin-bottom: 0.875em
 }
-
 
 /**
  * Shortcodes
@@ -450,7 +442,7 @@ iframe[src^="http://api.mixcloud.com/"] {
 }
 
 /* Twitter-timeline */
-.entry-content iframe[id*="twitter-widget-"] {
+.twitter-timeline {
 	margin-bottom: 1.75em !important;
 }
 
@@ -481,6 +473,7 @@ iframe[src^="http://api.mixcloud.com/"] {
 	opacity: 0.2;
 	position: absolute;
 	top: 0;
+	left: 0;
 	width: 100%;
 }
 
@@ -505,10 +498,6 @@ iframe[src^="http://api.mixcloud.com/"] {
 
 .entry-content #jp-relatedposts h3.jp-relatedposts-headline em {
 	font-weight: 400;
-}
-
-.entry-content #jp-relatedposts .jp-relatedposts-headline em:after {
-	content: ":";
 }
 
 .jp-relatedposts-items:before,
@@ -730,16 +719,16 @@ iframe[src^="http://api.mixcloud.com/"] {
 	}
 
 	.widget_top-posts .widgets-list-layout .widgets-list-layout-blavatar {
-		margin-right: 0.538461538em;
-		max-width: 3.230769231em;
+		margin-top: 0.153846154em;
 	}
 
 	.widget_top-posts .widgets-list-layout-links {
-		padding-top: 0.807692308em;
+		width: -webkit-calc(100% - 4.153846154em);
+		width: calc(100% - 4.153846154em);
 	}
 
 	.widget_top-posts .widgets-list-layout li {
-		margin-bottom: 0.538461538em;
+		margin-bottom: 1.076923077em;
 	}
 
 	.widget_upcoming_events_widget .upcoming-events li {
